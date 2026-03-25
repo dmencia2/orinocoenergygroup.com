@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orinoco Energy Group | Project Cargo & Energy Logistics</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1B2A4A;
+    --orange: #E05A00;
+    --orange-light: #FF6B1A;
+    --white:  #FFFFFF;
+    --off:    #F4F5F7;
+    --gray:   #7A8494;
+    --dark:   #0D1826;
+    --text:   #2C3445;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(13, 24, 38, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(224, 90, 0, 0.2);
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 22px; letter-spacing: 0.04em;
+    color: var(--white); text-decoration: none;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+  .nav-cta {
+    background: var(--orange); color: var(--white);
+    padding: 10px 24px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 60px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(224,90,0,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 10% 80%, rgba(27,42,74,0.8) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 900px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 2px;
+    background: var(--orange);
+  }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(56px, 8vw, 100px);
+    font-weight: 800; line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--orange);
+  }
+  .hero-sub {
+    font-size: 18px; line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    max-width: 580px; margin-bottom: 48px;
+    font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--orange); color: var(--white);
+    padding: 16px 36px; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.3); color: var(--white);
+    padding: 16px 36px; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+  .hero-stats {
+    position: absolute; bottom: 60px; right: 60px;
+    display: flex; gap: 48px; z-index: 1;
+  }
+  .stat { text-align: right; }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 42px; font-weight: 800; color: var(--orange);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+
+  /* ── TICKER ── */
+  .ticker {
+    background: var(--orange);
+    padding: 14px 0; overflow: hidden;
+  }
+  .ticker-inner {
+    display: flex; gap: 60px; white-space: nowrap;
+    animation: ticker 20s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--white);
+    display: flex; align-items: center; gap: 24px;
+  }
+  .ticker-dot { width: 4px; height: 4px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 60px; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--orange); }
+  h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5vw, 56px); font-weight: 800;
+    line-height: 1; letter-spacing: -0.01em; color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 17px; line-height: 1.7; color: var(--gray);
+    max-width: 560px; margin-bottom: 60px; font-weight: 300;
+  }
+
+  /* ── WHO WE ARE ── */
+  .about { background: var(--off); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .about-left h2 { margin-bottom: 24px; }
+  .about-left p {
+    font-size: 16px; line-height: 1.8; color: var(--gray);
+    margin-bottom: 20px; font-weight: 300;
+  }
+  .about-left p strong { color: var(--navy); font-weight: 600; }
+  .about-right { display: flex; flex-direction: column; gap: 24px; padding-top: 20px; }
+  .about-card {
+    border-left: 3px solid var(--orange);
+    padding: 20px 24px;
+    background: var(--white);
+  }
+  .about-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--navy); margin-bottom: 8px;
+  }
+  .about-card p { font-size: 14px; line-height: 1.65; color: var(--gray); font-weight: 300; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--navy); }
+  .services h2 { color: var(--white); }
+  .services .section-sub { color: rgba(255,255,255,0.45); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    padding: 40px 32px; transition: background 0.2s;
+    border-top: 2px solid transparent;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.08); border-color: var(--orange); }
+  .service-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--orange); margin-bottom: 20px;
+  }
+  .service-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 700; color: var(--white);
+    margin-bottom: 14px; line-height: 1.1;
+  }
+  .service-desc { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.45); font-weight: 300; }
+
+  /* ── THE GROUP ── */
+  .group { background: var(--white); }
+  .group-intro { max-width: 680px; margin-bottom: 60px; }
+  .group-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .group-card {
+    padding: 40px 32px;
+    border: 1px solid rgba(27,42,74,0.1);
+    position: relative; overflow: hidden;
+  }
+  .group-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--orange);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .group-card:hover::before { transform: scaleX(1); }
+  .group-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 16px;
+  }
+  .group-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px; font-weight: 800; color: var(--navy);
+    margin-bottom: 12px; line-height: 1.1;
+  }
+  .group-role { font-size: 13px; color: var(--gray); margin-bottom: 24px; font-weight: 300; line-height: 1.6; }
+  .group-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .group-bullets li {
+    font-size: 13px; color: var(--gray); padding-left: 16px;
+    position: relative; font-weight: 300;
+  }
+  .group-bullets li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--orange); font-size: 11px;
+  }
+
+  /* ── TRACK RECORD ── */
+  .track { background: var(--dark); }
+  .track h2 { color: var(--white); }
+  .track .section-sub { color: rgba(255,255,255,0.4); }
+  .metrics-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 48px; }
+  .metric {
+    padding: 40px 32px;
+    background: rgba(255,255,255,0.04);
+    border-top: 2px solid rgba(224,90,0,0.3);
+  }
+  .metric-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 56px; font-weight: 800; color: var(--orange);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .metric-label { font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 300; line-height: 1.5; }
+  .efficiency-table { width: 100%; border-collapse: collapse; }
+  .efficiency-table th {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.35);
+    padding: 12px 20px; text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .efficiency-table td {
+    padding: 16px 20px; font-size: 14px; color: rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.04); font-weight: 300;
+  }
+  .efficiency-table td.gain { color: var(--orange); font-weight: 700; }
+
+  /* ── COMPLIANCE ── */
+  .compliance { background: var(--off); }
+  .compliance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .compliance-left .section-label { margin-bottom: 16px; }
+  .compliance-left p { font-size: 16px; line-height: 1.8; color: var(--gray); font-weight: 300; margin-bottom: 20px; }
+  .badge-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+  .badge {
+    background: var(--navy); color: var(--white);
+    padding: 8px 16px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .compliance-right { display: flex; flex-direction: column; gap: 3px; }
+  .comp-row {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 20px 24px; background: var(--white);
+  }
+  .comp-check {
+    width: 28px; height: 28px; min-width: 28px;
+    background: var(--orange); display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: var(--white); font-weight: 700; margin-top: 2px;
+  }
+  .comp-label { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; letter-spacing: 0.02em; }
+  .comp-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--navy); }
+  .contact h2 { color: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-left p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.5); font-weight: 300; margin-bottom: 40px; }
+  .contact-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 24px; }
+  .contact-type { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); }
+  .contact-val { font-size: 15px; color: rgba(255,255,255,0.8); font-weight: 300; }
+  .contact-right {
+    background: rgba(255,255,255,0.04);
+    padding: 48px; border-top: 3px solid var(--orange);
+  }
+  .contact-right h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px; font-weight: 800; color: var(--white); margin-bottom: 8px;
+  }
+  .contact-right p { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 32px; font-weight: 300; }
+  .form-group { margin-bottom: 20px; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12); color: var(--white);
+    padding: 14px 18px; font-size: 14px; font-family: 'Barlow', sans-serif;
+    outline: none; transition: border 0.2s; resize: none;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--orange); }
+  .form-group select option { background: var(--navy); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 40px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; font-weight: 800; color: var(--white);
+  }
+  .footer-brand span { color: var(--orange); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); font-weight: 300; }
+  .footer-compliance {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    text-align: right; line-height: 1.6; max-width: 380px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-eyebrow  { animation-delay: 0.1s; }
+  .hero h1       { animation-delay: 0.2s; }
+  .hero-sub      { animation-delay: 0.35s; }
+  .hero-actions  { animation-delay: 0.5s; }
+  .hero-stats    { animation-delay: 0.6s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">ORINOCO<span>.</span>ENERGY GROUP</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#group">The Group</a></li>
+    <li><a href="#compliance">Compliance</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Project Cargo &amp; Energy Logistics — The Americas</div>
+    <h1>THE CONTRACT.<br><em>THE EXECUTION.</em><br>THE RESULT.</h1>
+    <p class="hero-sub">
+      Orinoco Energy Group is the U.S.-incorporated commercial entity purpose-built for
+      Venezuela's energy reactivation — winning contracts with oil majors and EPC firms,
+      backed by a fully integrated logistics group with 7+ years of proven operations.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#group" class="btn-outline">The Group</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">400+</div>
+      <div class="stat-label">Vessels Operated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">+500%</div>
+      <div class="stat-label">Export Efficiency Gain</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">Years at Guanta</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <div class="ticker-item">OFAC GL 46B Authorized <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SAM.gov Registered <span class="ticker-dot"></span></div>
+    <div class="ticker-item">FCPA Aligned <span class="ticker-dot"></span></div>
+    <div class="ticker-item">ISPS Compliant <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SENIAT Registered <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Puerto de Guanta Operations <span class="ticker-dot"></span></div>
+    <div class="ticker-item">U.S. Incorporated <span class="ticker-dot"></span></div>
+    <div class="ticker-item">2026 VZ Hydrocarbons Law Ready <span class="ticker-dot"></span></div>
+    <div class="ticker-item">OFAC GL 46B Authorized <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SAM.gov Registered <span class="ticker-dot"></span></div>
+    <div class="ticker-item">FCPA Aligned <span class="ticker-dot"></span></div>
+    <div class="ticker-item">ISPS Compliant <span class="ticker-dot"></span></div>
+    <div class="ticker-item">SENIAT Registered <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Puerto de Guanta Operations <span class="ticker-dot"></span></div>
+    <div class="ticker-item">U.S. Incorporated <span class="ticker-dot"></span></div>
+    <div class="ticker-item">2026 VZ Hydrocarbons Law Ready <span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-left">
+      <div class="section-label">Who We Are</div>
+      <h2>CONTRACT.<br>EXECUTE.<br>DELIVER.</h2>
+      <p>
+        Orinoco Energy Group Inc is a <strong>U.S.-incorporated energy logistics company</strong>
+        formed in March 2026 — at the exact moment the OFAC reactivation window opened for Venezuela.
+        We were built for this moment.
+      </p>
+      <p>
+        We structure and win contracts for <strong>project cargo and energy infrastructure logistics</strong>
+        across the Americas, then execute through a fully integrated group that controls every node of the
+        supply chain: origin, port, customs, and final delivery.
+      </p>
+      <p>
+        Our operational backbone has been at <strong>Puerto de Guanta since 2018</strong> —
+        the only port in eastern Venezuela capable of receiving Orinoco Belt project cargo,
+        including equipment exceeding 300 tons.
+      </p>
+      <a href="#contact" class="btn-primary" style="margin-top:20px;">Work With Us</a>
+    </div>
+    <div class="about-right">
+      <div class="about-card">
+        <div class="about-card-title">The Problem We Solve</div>
+        <p>Every oil major and EPC firm moving equipment to Venezuela faces the same challenge: no single, OFAC-compliant U.S. entity that can win the logistics contract AND guarantee ground-level execution. Orinoco is that entity.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Why Now</div>
+        <p>OFAC General Licenses 46B, 47, 48A, 30B, and 52 — issued January–March 2026 with no expiration — have opened the legal framework for U.S. entities to operate fully in Venezuela's energy sector. We are positioned, compliant, and operational.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Our Structure</div>
+        <p>Orinoco wins the contract. OEG Internacional moves the cargo. OCK Servicios Logísticos works the port. ADUAVEN clears customs. One group. One accountability. Zero gaps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What We Do</div>
+  <h2>END-TO-END<br>ENERGY LOGISTICS</h2>
+  <p class="section-sub">From U.S. origin to Venezuelan project site — we coordinate every link in the chain.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01 — CONTRACT STRUCTURING</div>
+      <div class="service-title">Contract Origination &amp; Negotiation</div>
+      <p class="service-desc">We engage directly with oil majors, EPC companies, and EXIM Bank-financed exporters to structure project cargo and logistics contracts for Venezuela operations. We are the U.S. counterparty.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02 — INTERNATIONAL FREIGHT</div>
+      <div class="service-title">Vessel Chartering &amp; Ocean Freight</div>
+      <p class="service-desc">Full and partial vessel charters for project and breakbulk cargo. FCL/LCL from all U.S. and Venezuelan ports. NVOCC & IAC licensed. Air freight coordination. Direct shipping line connections — no intermediaries.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03 — PORT OPERATIONS</div>
+      <div class="service-title">Puerto de Guanta — Heavy Cargo</div>
+      <p class="service-desc">Licensed port operations via OCK Servicios Logísticos. Stevedoring, heavy-lift up to 300+ tons, RoRo, container handling, vessel agency. The only operator in eastern Venezuela executing at this scale.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04 — CUSTOMS CLEARANCE</div>
+      <div class="service-title">SENIAT-Registered Customs</div>
+      <p class="service-desc">Full customs clearance via ADUAVEN, our affiliated SENIAT-registered broker. DAI/SDR filings, tariff classification, pre-valuation, special regimes. Group-owned — no third-party exposure.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05 — INLAND DELIVERY</div>
+      <div class="service-title">Land Transport to the Faja</div>
+      <p class="service-desc">Overland transport coordination from Puerto de Guanta to Faja del Orinoco project sites, eastern Venezuelan refineries, and cryogenic facilities. Route-planned for oversized loads.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06 — WAREHOUSING</div>
+      <div class="service-title">Storage &amp; Inventory Management</div>
+      <p class="service-desc">Cargo storage, consolidation, and inventory management at facilities in Miami (FL), Caracas, and Barcelona (Venezuela). Picking, packing, cross-docking, refrigerated storage, and vehicle storage available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE GROUP -->
+<section class="group" id="group">
+  <div class="section-label">The Execution Engine</div>
+  <div class="group-intro">
+    <h2>ONE CONTRACT.<br>THREE DIVISIONS.</h2>
+    <p class="section-sub" style="margin-bottom:0;">Orinoco subcontracts all execution to affiliated entities, each controlling a critical node of the supply chain.</p>
+  </div>
+  <div class="group-grid">
+    <div class="group-card">
+      <div class="group-tag">U.S. Operations</div>
+      <div class="group-name">OEG Internacional</div>
+      <p class="group-role">SAM.gov registered, NVOCC & IAC licensed. Handles international freight, vessel chartering, and project cargo export from U.S. ports. The OFAC "established U.S. entity" for Group operations.</p>
+      <ul class="group-bullets">
+        <li>NVOCC & IAC licensed</li>
+        <li>Full & partial vessel charters</li>
+        <li>FCL from all Venezuelan ports</li>
+        <li>Commodity exports (scrap, minerals, oil byproducts)</li>
+        <li>Miami, Caracas, Barcelona warehousing</li>
+      </ul>
+    </div>
+    <div class="group-card">
+      <div class="group-tag">Venezuela — Port Operations</div>
+      <div class="group-name">OCK Servicios Logísticos</div>
+      <p class="group-role">Licensed port operator at Puerto de Guanta under formal concession. Operating continuously since April 2018. The only operator in eastern Venezuela executing heavy-lift project cargo at scale.</p>
+      <ul class="group-bullets">
+        <li>Stevedoring & container ops</li>
+        <li>Heavy-lift: 300+ ton equipment</li>
+        <li>RoRo ramp to refineries & cryogenic plants</li>
+        <li>Vessel agency & representation</li>
+        <li>24/7 security & lighting</li>
+      </ul>
+    </div>
+    <div class="group-card">
+      <div class="group-tag">Venezuela — Customs</div>
+      <div class="group-name">ADUAVEN</div>
+      <p class="group-role">Affiliated SENIAT-registered customs brokerage. Handles all import/export clearance at Venezuelan ports — directly integrated with port operations. No third-party intermediary.</p>
+      <ul class="group-bullets">
+        <li>SENIAT-registered broker</li>
+        <li>DAI/SDR filings</li>
+        <li>Tariff classification & pre-valuation</li>
+        <li>Special customs regimes</li>
+        <li>Representation before SENIAT</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="track">
+  <div class="section-label">Operational Track Record</div>
+  <h2>THE NUMBERS<br>SPEAK.</h2>
+  <p class="section-sub">OCK Servicios Logísticos — Puerto de Guanta, April 2018 to December 2025.</p>
+  <div class="metrics-row">
+    <div class="metric">
+      <div class="metric-num">400+</div>
+      <div class="metric-label">Total vessels operated at Puerto de Guanta</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">+500%</div>
+      <div class="metric-label">General cargo export efficiency gain</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">+175%</div>
+      <div class="metric-label">Container vessel moves per hour improvement</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">12h</div>
+      <div class="metric-label">Container relocation time — down from 2–3 days</div>
+    </div>
+  </div>
+  <table class="efficiency-table">
+    <thead>
+      <tr>
+        <th>Operation</th>
+        <th>Before OCK</th>
+        <th>After OCK</th>
+        <th>Improvement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Container vessel moves/hour</td><td>8 MPH</td><td>22 MPH</td><td class="gain">+175%</td></tr>
+      <tr><td>General cargo import (tons/hour)</td><td>50 TPH</td><td>180 TPH</td><td class="gain">+260%</td></tr>
+      <tr><td>General cargo export (tons/hour)</td><td>60 TPH</td><td>320 TPH</td><td class="gain">+500%</td></tr>
+      <tr><td>Container relocation time</td><td>2–3 days</td><td>12 hours</td><td class="gain">↓93%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="compliance" id="compliance">
+  <div class="compliance-grid">
+    <div class="compliance-left">
+      <div class="section-label">Regulatory Posture</div>
+      <h2>COMPLIANCE<br>FIRST.</h2>
+      <p>
+        In a market where most operators are figuring out compliance reactively,
+        Orinoco built the framework before the business. Every transaction is
+        structured, documented, and auditable.
+      </p>
+      <p>
+        The OEG Group qualifies as an OFAC "established U.S. entity" through
+        OEG Internacional — covering all Group operations under Venezuela
+        General Licenses with no specific license application required.
+      </p>
+      <div class="badge-list">
+        <span class="badge">OFAC GL 46B</span>
+        <span class="badge">GL 47</span>
+        <span class="badge">GL 48A</span>
+        <span class="badge">GL 30B</span>
+        <span class="badge">GL 49A</span>
+        <span class="badge">GL 50A</span>
+        <span class="badge">GL 52</span>
+      </div>
+    </div>
+    <div class="compliance-right">
+      <div class="comp-row">
+        <div class="comp-check">✓</div>
+        <div>
+          <div class="comp-label">OFAC General Licenses — Established U.S. Entity</div>
+          <div class="comp-desc">Group qualifies through OEG Internacional (pre-Jan 2025). No specific license required for covered Venezuela energy activities.</div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-check">✓</div>
+        <div>
+          <div class="comp-label">SAM.gov Registered</div>
+          <div class="comp-desc">Registered through OEG Internacional. Eligible for U.S. federal programs, EXIM Bank financing frameworks, and government-adjacent contracts.</div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-check">✓</div>
+        <div>
+          <div class="comp-label">FCPA Aligned</div>
+          <div class="comp-desc">Anti-bribery policy, documented financial controls, third-party due diligence procedures for all Venezuelan operations.</div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-check">✓</div>
+        <div>
+          <div class="comp-label">ISPS Code Compliant</div>
+          <div class="comp-desc">Port security compliance at Guanta under the IMO-recognized Port Facility Security Plan. Required for all internationally trading vessels.</div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-check">✓</div>
+        <div>
+          <div class="comp-label">SENIAT Registered — ADUAVEN</div>
+          <div class="comp-desc">Group-owned Venezuelan customs brokerage. Fully compliant, no third-party intermediary risk.</div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-check">✓</div>
+        <div>
+          <div class="comp-label">2026 Venezuela Hydrocarbons Law</div>
+          <div class="comp-desc">New law enables private operator contracts with U.S. law governing and U.S.-based dispute resolution — directly applicable to Orinoco Group agreements.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label" style="color:var(--orange)">Let's Talk</div>
+  <h2 style="color:white;margin-bottom:60px;">READY TO<br>MOVE CARGO.</h2>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p>Whether you're an oil major re-entering Venezuela, an EPC firm planning your first Orinoco Belt project, or a U.S. exporter needing a compliant logistics partner — we are ready to structure the solution.</p>
+      <div class="contact-item">
+        <div class="contact-type">General Inquiries</div>
+        <div class="contact-val">info@orinocoenergygroup.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-type">Business Development</div>
+        <div class="contact-val">daniel@orinocoenergygroup.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-type">U.S. Operations</div>
+        <div class="contact-val">Miami, Florida</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-type">Venezuela Operations</div>
+        <div class="contact-val">Puerto de Guanta, Anzoátegui State</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-type">Follow</div>
+        <div class="contact-val">LinkedIn: Orinoco Energy Group</div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Start a Conversation</h3>
+      <p>Tell us about your project and we'll respond within 24 hours.</p>
+      <div class="form-row">
+        <div class="form-group"><input type="text" placeholder="Your Name"></div>
+        <div class="form-group"><input type="text" placeholder="Company"></div>
+      </div>
+      <div class="form-group"><input type="email" placeholder="Email Address"></div>
+      <div class="form-group">
+        <select>
+          <option value="" disabled selected>Type of Inquiry</option>
+          <option>Project Cargo — Venezuela</option>
+          <option>Vessel Charter</option>
+          <option>EXIM Bank Logistics Partner</option>
+          <option>Port Operations</option>
+          <option>Customs Clearance</option>
+          <option>Investment / Partnership</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><textarea rows="4" placeholder="Brief description of your project or inquiry..."></textarea></div>
+      <a href="mailto:info@orinocoenergygroup.com" class="btn-primary" style="width:100%;text-align:center;display:block;">Send Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">ORINOCO<span>.</span>ENERGY GROUP</div>
+  <div class="footer-copy">© 2026 Orinoco Energy Group Inc. All rights reserved.</div>
+  <div class="footer-compliance">
+    OFAC Compliant · SAM.gov Registered · FCPA Aligned<br>
+    U.S. Incorporated · OrinocoEnergyGroup.com
+  </div>
+</footer>
+
+</body>
+</html>
