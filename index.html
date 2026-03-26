@@ -33,7 +33,7 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 60px; height: 80px;
+    padding: 0 60px; height: 72px;
     background: rgba(1, 31, 66, 0.97);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(236,93,20,0.25);
@@ -42,7 +42,7 @@
     display: flex; align-items: center; gap: 14px;
     text-decoration: none;
   }
-  .nav-logo img { height: 52px; width: auto; display: block; filter: brightness(1.15) drop-shadow(0 0 8px rgba(236,93,20,0.25)); }
+  .nav-logo img { height: 38px; width: auto; display: block; }
   .nav-logo-text {
     display: flex; flex-direction: column;
     font-family: 'Montserrat', sans-serif;
@@ -79,7 +79,7 @@
     min-height: 100vh;
     background: var(--navy-dark);
     display: flex; flex-direction: column; justify-content: center;
-    padding: 128px 60px 80px;
+    padding: 120px 60px 80px;
     position: relative; overflow: hidden;
   }
   .hero-bg {
@@ -382,10 +382,10 @@
     .nav-cta { padding: 9px 18px; font-size: 10px; }
     .nav-logo-name { font-size: 12px; }
     .nav-logo-sub { font-size: 8px; }
-    .nav-logo img { height: 42px; }
+    .nav-logo img { height: 30px; }
 
     /* HERO */
-    .hero { padding: 100px 24px 140px; min-height: 100svh; }
+    .hero { padding: 90px 20px 40px; min-height: 100svh; }
     .hero h1 { font-size: 44px; line-height: 0.95; }
     .hero-sub { font-size: 15px; max-width: 100%; }
     .hero-actions { flex-direction: column; gap: 12px; }
@@ -393,7 +393,8 @@
     .hero-stats {
       position: static; display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0; margin-top: 48px; text-align: center;
+      gap: 2px; margin-top: 40px; text-align: center;
+      background: rgba(255,255,255,0.05); padding: 16px 0;
     }
     .stat { text-align: center; }
     .stat-num { font-size: 28px; }
@@ -436,10 +437,11 @@
 
     /* FOOTER */
     footer {
-      flex-direction: column; gap: 16px;
-      padding: 32px 24px; text-align: center;
+      flex-direction: column; gap: 20px;
+      padding: 32px 20px; text-align: center; align-items: center;
     }
-    .footer-comp { text-align: center; max-width: 100%; }
+    .footer-comp { text-align: center; max-width: 100%; font-size: 9px; }
+    .footer-social { justify-content: center; }
 
     /* GL BADGES */
     .gl-badges { gap: 6px; }
@@ -483,6 +485,60 @@
   .mobile-menu a:hover { color: var(--orange); }
   @media (max-width: 768px) {
     .hamburger { display: flex; }
+  }
+
+
+  /* ── FLOATING BUTTONS ── */
+  .floating-btns {
+    position: fixed; bottom: 28px; right: 24px;
+    display: flex; flex-direction: column; gap: 12px; z-index: 999;
+  }
+  .float-btn {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 22px;
+  }
+  .float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+  .float-wa  { background: #25D366; }
+  .float-cal { background: var(--orange); }
+  .float-li  { background: #0A66C2; }
+
+  /* ── SOCIAL LINKS IN FOOTER ── */
+  .footer-social { display: flex; gap: 14px; align-items: center; }
+  .social-link {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    font-size: 14px; font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s; letter-spacing: 0;
+  }
+  .social-link:hover { background: var(--orange); border-color: var(--orange); color: white; }
+
+  @media (max-width: 768px) {
+    .floating-btns { bottom: 80px; right: 16px; }
+    .float-btn { width: 46px; height: 46px; font-size: 20px; }
+  }
+
+
+  /* ── iOS SAFARI FIXES ── */
+  @supports (-webkit-touch-callout: none) {
+    .hero { min-height: -webkit-fill-available; padding-top: 100px; }
+  }
+  @media (max-width: 768px) {
+    .hero { padding: 88px 20px 48px; }
+    .hero h1 { font-size: 38px; letter-spacing: -0.02em; }
+    .hero-sub { font-size: 14px; line-height: 1.7; margin-bottom: 32px; }
+    .nav-logo-text { display: none; }
+    .nav-logo img { height: 36px; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 56px 20px; }
+    h2 { font-size: 30px; }
   }
 
 </style>
@@ -706,10 +762,12 @@ function closeMenu() {
   <div class="contact-grid">
     <div class="contact-left">
       <p>Whether you're an oil major re-entering Venezuela, an EPC firm planning your first Orinoco Belt project, or a U.S. exporter needing a compliant logistics partner — we are ready to structure the solution.</p>
-      <div class="contact-detail"><div class="contact-type">General Inquiries</div><div class="contact-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97fef9f1f8d7f8e5fef9f8f4f8f2f9f2e5f0eef0e5f8e2e7b9f4f8fa">[email&#160;protected]</a></div></div>
-      <div class="contact-detail"><div class="contact-type">Business Development</div><div class="contact-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="284c4946414d4468475a4146474b474d464d5a4f514f5a475d58064b4745">[email&#160;protected]</a></div></div>
-      <div class="contact-detail"><div class="contact-type">U.S. Operations</div><div class="contact-val">Miami, Florida</div></div>
-      <div class="contact-detail"><div class="contact-type">Venezuela Operations</div><div class="contact-val">Puerto de Guanta, Anzoátegui State</div></div>
+      <div class="contact-detail"><div class="contact-type">General Inquiries</div><div class="contact-val"><a data-email="general" href="#" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:300;">info@orinocoenergygroup.com</a></div></div>
+      <div class="contact-detail"><div class="contact-type">Business Development</div><div class="contact-val"><a data-email="daniel" href="#" style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:300;">daniel@orinocoenergygroup.com</a></div></div>
+      <div class="contact-detail"><div class="contact-type">Operations</div><div class="contact-val">Miami, FL &nbsp;·&nbsp; Puerto de Guanta, Venezuela</div></div>
+      <div class="contact-detail"><div class="contact-type">LinkedIn</div><div class="contact-val"><a href="https://www.linkedin.com/company/orinocoenergygroup/" target="_blank" style="color:var(--orange);text-decoration:none;">linkedin.com/company/orinocoenergygroup</a></div></div>
+      <div class="contact-detail"><div class="contact-type">Schedule a Meeting</div><div class="contact-val"><a href="https://calendly.com/orinocoenergygroup" target="_blank" style="color:var(--orange);text-decoration:none;">calendly.com/orinocoenergygroup</a></div></div>
+      <div class="contact-detail"><div class="contact-type">WhatsApp</div><div class="contact-val"><a href="https://wa.me/17868790246?text=Hello%2C%20I%27m%20interested%20in%20Orinoco%20Energy%20Group%20services." target="_blank" style="color:var(--orange);text-decoration:none;">Message us directly</a></div></div>
     </div>
     <div class="contact-form">
       <h3>Start a Conversation</h3>
@@ -732,7 +790,7 @@ function closeMenu() {
         </select>
       </div>
       <div class="form-group"><textarea rows="4" placeholder="Brief description of your project or inquiry..."></textarea></div>
-      <a href="/cdn-cgi/l/email-protection#ee87808881ae819c8780818d818b808b9c8997899c819b9ec08d8183" class="btn-primary" style="width:100%;text-align:center;display:block;">Send Inquiry</a>
+      <a data-email="send" href="#" class="btn-primary" style="width:100%;text-align:center;display:block;">Send Inquiry</a>
     </div>
   </div>
 </section>
