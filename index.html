@@ -33,33 +33,30 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 60px; height: 84px;
-    background: rgba(1, 31, 66, 0.97);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(236,93,20,0.25);
+    padding: 0 60px; height: 96px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
   }
   .nav-logo {
-    display: flex; align-items: center; gap: 14px;
+    display: flex; align-items: center; gap: 0;
     text-decoration: none;
   }
   .nav-logo img { height: 58px; width: auto; display: block; }
   .nav-logo-img { filter: brightness(1.15) drop-shadow(0 0 6px rgba(236,93,20,0.3)); }
-  .nav-logo-text {
-    display: flex; flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-  }
+  .nav-logo-text { display: none; }
   .nav-logo-name {
     font-size: 15px; font-weight: 800; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--white); line-height: 1;
+    text-transform: uppercase; color: var(--navy); line-height: 1;
   }
   .nav-logo-name span { color: var(--orange); }
   .nav-logo-sub {
     font-size: 9px; font-weight: 600; letter-spacing: 0.18em;
-    text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 3px;
+    text-transform: uppercase; color: var(--gray); margin-top: 3px;
   }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
-    color: rgba(255,255,255,0.7); text-decoration: none;
+    color: var(--navy); text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
     transition: color 0.2s;
@@ -304,7 +301,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
     color: rgba(255,255,255,0.3); padding: 12px 20px; text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
   }
   .eff-table td {
     padding: 15px 20px; font-size: 13px; color: rgba(255,255,255,0.55);
@@ -407,7 +404,7 @@
     .nav-logo-img { height: 44px; }
 
     /* HERO */
-    .hero { padding: 96px 20px 48px; min-height: 100svh; }
+    .hero { padding: 116px 20px 48px; min-height: 100svh; }
     .hero h1 { font-size: 44px; line-height: 0.95; }
     .hero-sub { font-size: 15px; max-width: 100%; }
     .hero-actions { flex-direction: column; gap: 12px; }
@@ -487,21 +484,21 @@
   }
   .hamburger span {
     display: block; width: 24px; height: 2px;
-    background: var(--white); transition: all 0.3s;
+    background: var(--navy); transition: all 0.3s;
   }
   .mobile-menu {
     display: none; position: fixed; top: 64px; left: 0; right: 0;
-    background: rgba(1,31,66,0.98); padding: 24px;
+    background: rgba(255,255,255,0.99); padding: 24px;
     flex-direction: column; gap: 0; z-index: 99;
     border-bottom: 2px solid var(--orange);
   }
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
-    color: rgba(255,255,255,0.8); text-decoration: none;
+    color: var(--navy); text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
     transition: color 0.2s;
   }
   .mobile-menu a:hover { color: var(--orange); }
@@ -518,11 +515,11 @@
   .float-btn {
     width: 52px; height: 52px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    text-decoration: none; 
     transition: transform 0.2s, box-shadow 0.2s;
     font-size: 22px;
   }
-  .float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+  .float-btn:hover { transform: scale(1.1);  }
   .float-wa  { background: #25D366; }
   .float-cal { background: var(--orange); }
   .float-li  { background: #0A66C2; }
@@ -570,7 +567,7 @@
     object-position: center;
     margin-bottom: 28px; display: block;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    
   }
   @media (max-width: 768px) { .about-photo { height: 200px; border-radius: 8px; } }
 
@@ -581,7 +578,7 @@
   }
   .ops-grid-item {
     overflow: hidden; border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    
     background: #011f42;
   }
   .ops-grid img {
@@ -603,7 +600,7 @@
     display: block; margin-bottom: 48px;
     filter: brightness(0.92);
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    
   }
   @media (max-width: 768px) { .group-banner { height: 160px; border-radius: 8px; } }
 
