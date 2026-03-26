@@ -42,7 +42,8 @@
     display: flex; align-items: center; gap: 14px;
     text-decoration: none;
   }
-  .nav-logo img { height: 58px; width: auto; display: block; filter: brightness(1.2) drop-shadow(0 2px 12px rgba(236,93,20,0.4)); }
+  .nav-logo img { height: 58px; width: auto; display: block; }
+  .nav-logo-img { filter: brightness(1.15) drop-shadow(0 0 6px rgba(236,93,20,0.3)); }
   .nav-logo-text {
     display: flex; flex-direction: column;
     font-family: 'Montserrat', sans-serif;
@@ -84,9 +85,18 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 70% 70% at 75% 50%, rgba(236,93,20,0.07) 0%, transparent 65%),
-      radial-gradient(ellipse 40% 80% at 5% 100%, rgba(1,51,105,0.6) 0%, transparent 50%);
+    background-image: url('https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/barco%20docked%20con.%20vista%20montanas.jpg');
+    background-size: cover; background-position: center;
+    background-repeat: no-repeat;
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(1,20,42,0.92) 0%,
+      rgba(1,31,66,0.82) 50%,
+      rgba(1,20,42,0.75) 100%
+    );
   }
   /* Polygon decorative shape - brand style */
   .hero-poly {
@@ -101,7 +111,7 @@
     background: var(--white);
     clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
   }
-  .hero-content { position: relative; z-index: 1; max-width: 820px; }
+  .hero-content { position: relative; z-index: 2; max-width: 820px; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 14px;
     font-family: 'Montserrat', sans-serif;
@@ -143,7 +153,7 @@
   .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
   .hero-stats {
     position: absolute; bottom: 52px; right: 60px;
-    display: flex; gap: 52px; z-index: 1;
+    display: flex; gap: 52px; z-index: 2;
   }
   .stat { text-align: right; }
   .stat-num {
@@ -210,7 +220,19 @@
   .about-card p { font-size: 13px; line-height: 1.7; color: var(--gray); font-weight: 300; }
 
   /* ── SERVICES ── */
-  .services { background: var(--navy); }
+
+  .services {
+    background: var(--navy);
+    position: relative;
+  }
+  .services::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: url('https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/barco%20con%20carga%20suelta.jpg');
+    background-size: cover; background-position: center;
+    opacity: 0.07;
+  }
+  .services > * { position: relative; z-index: 1; }
+
   .services h2 { color: var(--white); }
   .services .section-desc { color: rgba(255,255,255,0.4); }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
@@ -382,7 +404,7 @@
     .nav-cta { padding: 9px 18px; font-size: 10px; }
     .nav-logo-name { font-size: 12px; }
     .nav-logo-sub { font-size: 8px; }
-    .nav-logo img { height: 44px; }
+    .nav-logo-img { height: 44px; }
 
     /* HERO */
     .hero { padding: 96px 20px 48px; min-height: 100svh; }
@@ -543,6 +565,48 @@
     h2 { font-size: 30px; }
   }
 
+  .about-photo {
+    width: 100%; height: 280px; object-fit: cover;
+    object-position: center;
+    margin-bottom: 28px; display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+  @media (max-width: 768px) { .about-photo { height: 200px; border-radius: 8px; } }
+
+
+  .ops-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 8px; margin-top: 48px;
+  }
+  .ops-grid-item {
+    overflow: hidden; border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    background: #011f42;
+  }
+  .ops-grid img {
+    width: 100%; height: 180px; object-fit: cover;
+    object-position: center;
+    display: block; transition: transform 0.4s, filter 0.4s;
+    filter: brightness(0.82);
+  }
+  .ops-grid-item:hover img { transform: scale(1.04); filter: brightness(1); }
+  @media (max-width: 768px) {
+    .ops-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .ops-grid img { height: 120px; }
+  }
+
+
+  .group-banner {
+    width: 100%; height: 240px; object-fit: cover;
+    object-position: center 60%;
+    display: block; margin-bottom: 48px;
+    filter: brightness(0.92);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  @media (max-width: 768px) { .group-banner { height: 160px; border-radius: 8px; } }
+
 </style>
 <link rel="preload" as="image" href="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo.png">
 <meta name="robots" content="index, follow">
@@ -556,7 +620,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo.png" alt="Orinoco Energy Group" onerror="this.style.display='none'">
+    <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo.png" alt="Orinoco Energy Group" class="nav-logo-img" onerror="this.style.display='none'">
     <div class="nav-logo-text">
       <span class="nav-logo-name">ORINOCO <span>ENERGY</span> GROUP</span>
       <span class="nav-logo-sub">Project Cargo &amp; Energy Logistics</span>
@@ -636,7 +700,7 @@ function closeMenu() {
       
       <a href="#contact" class="btn-primary" style="margin-top:20px;display:inline-block;">Work With Us</a>
     </div>
-    <div class="about-right">
+    <div class="about-right"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/docks%20vista%20panoramica.jpg" alt="Puerto de Guanta operations" class="about-photo" loading="lazy">
       <div class="about-card">
         <div class="about-card-title">The Problem We Solve</div>
         <p>Every oil major re-entering Venezuela faces the same gap: no single, OFAC-compliant U.S. entity that can win the logistics contract AND guarantee ground-level execution. Orinoco is that entity.</p>
@@ -670,6 +734,7 @@ function closeMenu() {
 
 <!-- THE GROUP -->
 <section class="group" id="group">
+  <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/monta%20carga%20heavy%20machinery.jpg" alt="Heavy machinery operations" class="group-banner" loading="lazy">
   <div class="section-eyebrow">The Execution Engine</div>
   <h2>ONE CONTRACT.<br>THREE DIVISIONS.</h2>
   <p class="section-desc">Orinoco subcontracts all execution to affiliated entities, each controlling a critical node of the supply chain.</p>
@@ -730,6 +795,18 @@ function closeMenu() {
       <tr><td>Container relocation time</td><td>2–3 days</td><td>12 hours</td><td class="gain">↓93%</td></tr>
     </tbody>
   </table>
+
+  <div class="ops-grid">
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/foto%20del%20puerto%20con%20barco.jpg" alt="Port operations" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/in%20port%20movement.jpg" alt="In port movement" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/2x%20offshore%20break%20bulk%20vessels%20transhipment.jpg" alt="Breakbulk vessels" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/operacion%20carga%20suelta%20chatarra%20.jpg" alt="Scrap cargo operations" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/barco%20de%20noche.jpg" alt="Night operations" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/operacion%20tugboats%20docking.jpg" alt="Tugboat docking" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/offloading%20containers.jpg" alt="Offloading containers" loading="lazy"></div>
+    <div class="ops-grid-item"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/puerto%20de%20noche.jpg" alt="Port at night" loading="lazy"></div>
+  </div>
+
 </section>
 
 <!-- COMPLIANCE -->
