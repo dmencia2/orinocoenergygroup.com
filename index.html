@@ -40,19 +40,23 @@
   }
   .nav-logo {
     display: flex; align-items: center; gap: 0;
-    text-decoration: none;
+    text-decoration: none; color: inherit;
   }
+  .nav-logo * { color: inherit; }
   .nav-logo img { height: 58px; width: auto; display: block; }
   .nav-logo-img { filter: brightness(1.15) drop-shadow(0 0 6px rgba(236,93,20,0.3)); }
-  .nav-logo-text { display: none; }
+  .nav-logo-text { display: flex; }
   .nav-logo-name {
-    font-size: 15px; font-weight: 800; letter-spacing: 0.12em;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--navy); line-height: 1;
   }
   .nav-logo-name span { color: var(--orange); }
   .nav-logo-sub {
-    font-size: 9px; font-weight: 600; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gray); margin-top: 3px;
+    display: block !important;
+    font-size: 7.5px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #6B7280 !important;
+    line-height: 1.45; margin-top: 4px;
+    white-space: normal; max-width: 72px; word-break: normal;
   }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
@@ -604,6 +608,45 @@
   }
   @media (max-width: 768px) { .group-banner { height: 160px; border-radius: 8px; } }
 
+
+  @media (max-width: 768px) {
+    .nav-logo-name { display: none; }
+    .nav-logo-sub {
+    display: block !important;
+      font-size: 9px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #6B7280 !important;
+      margin-top: 0; white-space: nowrap;
+    }
+    .nav-logo-text { display: flex; flex-direction: column; justify-content: center; }
+    .nav-logo { gap: 10px; }
+  }
+
+
+
+  .nav-logo .nav-logo-sub,
+  .nav-logo a .nav-logo-sub,
+  a.nav-logo .nav-logo-sub { color: #6B7280 !important; }
+
+
+  /* ── NAV TAGLINE ── */
+  .nav-logo-text {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2px;
+  }
+  .nav-tagline-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    line-height: 1.6;
+    white-space: nowrap;
+    display: block;
+  }
+
 </style>
 <link rel="preload" as="image" href="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo.png">
 <meta name="robots" content="index, follow">
@@ -619,8 +662,8 @@
   <a href="#" class="nav-logo">
     <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo.png" alt="Orinoco Energy Group" class="nav-logo-img" onerror="this.style.display='none'">
     <div class="nav-logo-text">
-      <span class="nav-logo-name">ORINOCO <span>ENERGY</span> GROUP</span>
-      <span class="nav-logo-sub">Project Cargo &amp; Energy Logistics</span>
+      <span class="nav-tagline-line">Project Cargo &</span>
+      <span class="nav-tagline-line">Energy Logistics</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -708,7 +751,7 @@ function closeMenu() {
       </div>
       <div class="about-card">
         <div class="about-card-title">Our Model</div>
-        <p>Orinoco wins the contract. OEG Internacional moves the cargo. OCK Servicios Logísticos works the port. ADUAVEN clears customs. One group. One accountability. Zero gaps in the chain.</p>
+        <p>Orinoco wins the contract. OEG Internacional moves the cargo. Servicios Logísticos OCK works the port. ADUAVEN clears customs. One group. One accountability. Zero gaps in the chain.</p>
       </div>
     </div>
   </div>
@@ -722,7 +765,7 @@ function closeMenu() {
   <div class="services-grid">
     <div class="svc-card"><div class="svc-num">01 — CONTRACT STRUCTURING</div><div class="svc-title">Contract Origination &amp; Negotiation</div><p class="svc-desc">We engage directly with oil majors, EPC companies, and EXIM Bank-financed exporters to structure project cargo and logistics contracts. We are the compliant U.S. counterparty.</p></div>
     <div class="svc-card"><div class="svc-num">02 — INTERNATIONAL FREIGHT</div><div class="svc-title">Vessel Chartering &amp; Ocean Freight</div><p class="svc-desc">Full and partial vessel charters for project and breakbulk cargo. FCL/LCL from all U.S. and Venezuelan ports. NVOCC &amp; IAC licensed. Air freight. Direct shipping line connections.</p></div>
-    <div class="svc-card"><div class="svc-num">03 — PORT OPERATIONS</div><div class="svc-title">Puerto de Guanta — Heavy Cargo</div><p class="svc-desc">Licensed port operations via OCK Servicios Logísticos. Stevedoring, heavy-lift up to 300+ tons, RoRo, container handling, vessel agency. 400+ vessels operated since 2018.</p></div>
+    <div class="svc-card"><div class="svc-num">03 — PORT OPERATIONS</div><div class="svc-title">Puerto de Guanta — Heavy Cargo</div><p class="svc-desc">Licensed port operations via Servicios Logísticos OCK. Stevedoring, heavy-lift up to 300+ tons, RoRo, container handling, vessel agency. 400+ vessels operated since 2018.</p></div>
     <div class="svc-card"><div class="svc-num">04 — CUSTOMS CLEARANCE</div><div class="svc-title">SENIAT-Registered Customs</div><p class="svc-desc">Full customs clearance via ADUAVEN, our affiliated SENIAT-registered broker. DAI/SDR filings, tariff classification, special regimes. Group-owned — no third-party exposure.</p></div>
     <div class="svc-card"><div class="svc-num">05 — INLAND DELIVERY</div><div class="svc-title">Land Transport to the Faja</div><p class="svc-desc">Overland transport from Puerto de Guanta to Faja del Orinoco project sites, eastern Venezuelan refineries, and cryogenic facilities. Planned for oversized loads.</p></div>
     <div class="svc-card"><div class="svc-num">06 — WAREHOUSING</div><div class="svc-title">Storage &amp; Inventory Management</div><p class="svc-desc">Cargo storage and inventory management in Miami (FL), Caracas, and Barcelona (Venezuela). Picking, packing, cross-docking, refrigerated storage, and vehicle storage.</p></div>
@@ -748,9 +791,9 @@ function closeMenu() {
       </ul>
     </div>
     <div class="group-card">
-      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/Logo-OCK.PNG" loading="lazy" alt="OCK Servicios Logísticos" style="height:60px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
+      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/Logo-OCK.PNG" loading="lazy" alt="Servicios Logísticos OCK" style="height:60px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
       <div class="group-tag">Venezuela — Port Operations</div>
-      <div class="group-name">OCK Servicios Logísticos</div>
+      <div class="group-name">Servicios Logísticos OCK</div>
       <p class="group-desc">Licensed port operator at Puerto de Guanta under formal concession, operating continuously since April 2018. The only operator in eastern Venezuela executing heavy-lift project cargo at scale.</p>
       <ul class="group-list">
         <li>Stevedoring &amp; container ops</li><li>Heavy-lift: 300+ ton equipment</li>
@@ -776,7 +819,7 @@ function closeMenu() {
 <section class="track">
   <div class="section-eyebrow" style="color:var(--orange)">Operational Track Record</div>
   <h2 style="color:white">THE NUMBERS<br>SPEAK.</h2>
-  <p class="section-desc">OCK Servicios Logísticos — Puerto de Guanta, April 2018 to December 2025.</p>
+  <p class="section-desc">Servicios Logísticos OCK — Puerto de Guanta, April 2018 to December 2025.</p>
   <div class="metrics">
     <div class="metric"><div class="metric-num">400+</div><div class="metric-label">Total vessels operated at Puerto de Guanta</div></div>
     <div class="metric"><div class="metric-num">+500%</div><div class="metric-label">General cargo export efficiency gain</div></div>
