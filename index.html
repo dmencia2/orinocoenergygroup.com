@@ -33,7 +33,7 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 60px; height: 72px;
+    padding: 0 60px; height: 84px;
     background: rgba(1, 31, 66, 0.97);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(236,93,20,0.25);
@@ -42,7 +42,7 @@
     display: flex; align-items: center; gap: 14px;
     text-decoration: none;
   }
-  .nav-logo img { height: 38px; width: auto; display: block; }
+  .nav-logo img { height: 58px; width: auto; display: block; filter: brightness(1.2) drop-shadow(0 2px 12px rgba(236,93,20,0.4)); }
   .nav-logo-text {
     display: flex; flex-direction: column;
     font-family: 'Montserrat', sans-serif;
@@ -377,15 +377,15 @@
   @media (max-width: 768px) {
 
     /* NAV */
-    nav { padding: 0 20px; height: 64px; }
+    nav { padding: 0 16px; height: 76px; }
     .nav-links { display: none; }
     .nav-cta { padding: 9px 18px; font-size: 10px; }
     .nav-logo-name { font-size: 12px; }
     .nav-logo-sub { font-size: 8px; }
-    .nav-logo img { height: 30px; }
+    .nav-logo img { height: 44px; }
 
     /* HERO */
-    .hero { padding: 90px 20px 40px; min-height: 100svh; }
+    .hero { padding: 96px 20px 48px; min-height: 100svh; }
     .hero h1 { font-size: 44px; line-height: 0.95; }
     .hero-sub { font-size: 15px; max-width: 100%; }
     .hero-actions { flex-direction: column; gap: 12px; }
@@ -530,10 +530,12 @@
     .hero { min-height: -webkit-fill-available; padding-top: 100px; }
   }
   @media (max-width: 768px) {
-    .hero { padding: 88px 20px 48px; }
+    .hero { padding: 96px 20px 48px; }
     .hero h1 { font-size: 38px; letter-spacing: -0.02em; }
     .hero-sub { font-size: 14px; line-height: 1.7; margin-bottom: 32px; }
-    .nav-logo-text { display: none; }
+    .nav-logo-text { display: flex; }
+    .nav-logo-name { font-size: 10px; letter-spacing: 0.08em; }
+    .nav-logo-sub { font-size: 7px; letter-spacing: 0.12em; display: block; }
     .nav-logo img { height: 36px; }
     .nav-cta { display: none; }
     .hamburger { display: flex; }
@@ -673,7 +675,7 @@ function closeMenu() {
   <p class="section-desc">Orinoco subcontracts all execution to affiliated entities, each controlling a critical node of the supply chain.</p>
   <div class="group-grid">
     <div class="group-card">
-      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/LOGO-OEG.png" loading="lazy" alt="OEG Internacional" style="height:44px;width:auto;object-fit:contain;margin-bottom:16px;display:block;">
+      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/LOGO-OEG.png" loading="lazy" alt="OEG Internacional" style="height:60px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
       <div class="group-tag">U.S. Operations</div>
       <div class="group-name">OEG Internacional</div>
       <p class="group-desc">SAM.gov registered, NVOCC &amp; IAC licensed. Handles international freight, vessel chartering, and project cargo export from U.S. ports. The OFAC "established U.S. entity" for all Group operations.</p>
@@ -684,7 +686,7 @@ function closeMenu() {
       </ul>
     </div>
     <div class="group-card">
-      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/Logo-OCK.PNG" loading="lazy" alt="OCK Servicios Logísticos" style="height:44px;width:auto;object-fit:contain;margin-bottom:16px;display:block;">
+      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/Logo-OCK.PNG" loading="lazy" alt="OCK Servicios Logísticos" style="height:60px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
       <div class="group-tag">Venezuela — Port Operations</div>
       <div class="group-name">OCK Servicios Logísticos</div>
       <p class="group-desc">Licensed port operator at Puerto de Guanta under formal concession, operating continuously since April 2018. The only operator in eastern Venezuela executing heavy-lift project cargo at scale.</p>
@@ -695,7 +697,7 @@ function closeMenu() {
       </ul>
     </div>
     <div class="group-card">
-      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo-aduaven.png" loading="lazy" alt="ADUAVEN" style="height:44px;width:auto;object-fit:contain;margin-bottom:16px;display:block;">
+      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo-aduaven.png" loading="lazy" alt="ADUAVEN" style="height:60px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
       <div class="group-tag">Venezuela — Customs</div>
       <div class="group-name">ADUAVEN</div>
       <p class="group-desc">Affiliated SENIAT-registered customs brokerage. Handles all import/export clearance at Venezuelan ports — directly integrated with port operations. No third-party intermediary.</p>
