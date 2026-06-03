@@ -262,8 +262,9 @@
 
   /* ── THE GROUP ── */
   .group { background: var(--white); }
-  .group-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
+  .group-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; }
   .group-card {
+    flex: 0 1 calc(50% - 1.5px);
     background: var(--white); padding: 36px 28px; border: 1px solid var(--light-border);
     position: relative; overflow: hidden; transition: border-color 0.2s;
   }
@@ -321,8 +322,8 @@
 
   /* ── COMPLIANCE ── */
   .compliance { background: var(--off); }
-  .compliance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
-  .compliance-left p { font-size: 15px; line-height: 1.85; color: var(--gray); font-weight: 300; margin-bottom: 18px; }
+  .compliance-head { max-width: 900px; margin-bottom: 44px; }
+  .compliance-head p { font-size: 15px; line-height: 1.85; color: var(--gray); font-weight: 300; margin-bottom: 18px; }
   .gl-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
   .gl-badge {
     background: var(--navy); color: var(--white); padding: 7px 14px;
@@ -330,10 +331,11 @@
     font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
     clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
   }
-  .comp-list { display: flex; flex-direction: column; gap: 3px; }
+  .comp-list { column-count: 2; column-gap: 56px; }
   .comp-item {
-    display: flex; align-items: flex-start; gap: 18px;
-    padding: 20px 22px; background: var(--white);
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 16px 0; border-bottom: 1px solid var(--light-border);
+    break-inside: avoid; -webkit-column-break-inside: avoid;
   }
   .comp-icon {
     width: 30px; height: 30px; min-width: 30px;
@@ -391,6 +393,9 @@
     font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white);
   }
   .footer-brand span { color: var(--orange); }
+  .footer-brand-logo { display: block; line-height: 0; }
+  .footer-brand-logo img { height: 42px; width: auto; display: block; }
+  @media (max-width: 768px) { .footer-brand-logo img { height: 34px; } }
   .footer-copy { font-size: 11px; color: rgba(255,255,255,0.22); font-weight: 300; }
   .footer-comp { font-size: 10px; color: rgba(255,255,255,0.18); text-align: right; line-height: 1.7; max-width: 360px; font-family: 'Montserrat', sans-serif; letter-spacing: 0.04em; }
 
@@ -445,8 +450,7 @@
     .svc-title { font-size: 16px; }
 
     /* GROUP */
-    .group-grid { grid-template-columns: 1fr; gap: 3px; }
-    .group-card { padding: 28px 24px; }
+    .group-card { flex-basis: 100%; padding: 28px 24px; }
     .group-card img { height: 36px; }
 
     /* TRACK */
@@ -456,8 +460,8 @@
     .eff-table { display: none; }
 
     /* COMPLIANCE */
-    .compliance-grid { grid-template-columns: 1fr; gap: 40px; }
-    .comp-item { padding: 16px 18px; }
+    .comp-list { column-count: 1; }
+    .comp-item { padding: 14px 0; }
 
     /* CONTACT */
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -653,7 +657,78 @@
     display: block;
   }
 
-</style>
+  /* ── END-TO-END COVERAGE ── */
+  .corridor { background: var(--off); }
+  .corridor h2 { color: var(--navy); }
+  .corridor .section-desc { color: var(--gray); }
+  .chain {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    margin: 8px 0 48px; border: 1px solid var(--light-border); background: var(--white);
+  }
+  .chain-node { padding: 28px 22px; position: relative; border-right: 1px solid var(--light-border); }
+  .chain-node:last-child { border-right: none; }
+  .chain-node::after {
+    content: '→'; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+    color: var(--orange); font-size: 13px; font-weight: 700;
+    background: var(--off); padding: 2px 1px; z-index: 2;
+  }
+  .chain-node:last-child::after { display: none; }
+  .chain-step {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--orange); margin-bottom: 12px;
+  }
+  .chain-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; font-weight: 800; text-transform: uppercase; color: var(--navy);
+    margin-bottom: 8px; line-height: 1.2;
+  }
+  .chain-desc { font-size: 12px; color: var(--gray); line-height: 1.6; font-weight: 300; }
+  .assure-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+  .assure { background: var(--white); padding: 28px 24px; border-top: 3px solid var(--orange); }
+  .assure-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--navy);
+    margin-bottom: 10px; line-height: 1.2;
+  }
+  .assure-desc { font-size: 12.5px; color: var(--gray); line-height: 1.7; font-weight: 300; }
+  @media (max-width: 768px) {
+    .chain { grid-template-columns: 1fr; }
+    .chain-node { border-right: none; border-bottom: 1px solid var(--light-border); padding: 22px; }
+    .chain-node:last-child { border-bottom: none; }
+    .chain-node::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -8px; transform: translateX(-50%); }
+    .assure-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── GROUP CARD (TUBINCA uses the standard card) ── */
+
+  /* ── TUBINCA SECTION (condensed) ── */
+  .tubinca { background: var(--off); }
+  .tub-logo { height: 60px; width: auto; display: block; margin-bottom: 22px; }
+  .tubinca h2 { color: var(--navy); }
+  .tub-intro { font-size: 15px; line-height: 1.85; color: var(--gray); font-weight: 300; max-width: 820px; margin-bottom: 40px; }
+  .tub-intro strong { color: var(--navy); font-weight: 600; }
+  .tub-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .tub-pillar { background: var(--white); padding: 32px 30px; border-top: 3px solid var(--orange); }
+  .tub-pillar-tag { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: var(--orange); margin-bottom: 12px; }
+  .tub-pillar-title { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 800; text-transform: uppercase; color: var(--navy); margin-bottom: 16px; line-height: 1.15; }
+  .tub-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tub-list li { font-size: 13px; color: var(--gray); padding-left: 18px; position: relative; font-weight: 300; line-height: 1.55; }
+  .tub-list li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; top: 2px; }
+  @media (max-width: 768px) { .tub-pillars { grid-template-columns: 1fr; } .tub-logo { height: 48px; } }
+  /* ── COMMODITY LOGISTICS ── */
+  .commodities { background: var(--navy); }
+  .commodities h2 { color: var(--white); }
+  .commodities .section-desc { color: rgba(255,255,255,0.45); }
+  .comm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+  .comm-card { background: rgba(255,255,255,0.04); padding: 30px 26px; border-top: 3px solid var(--orange); }
+  .comm-card-title { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
+  .comm-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .comm-list li { font-size: 12.5px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.5; padding-left: 16px; position: relative; }
+  .comm-list li::before { content: '·'; position: absolute; left: 2px; color: var(--orange); font-weight: 700; }
+  @media (max-width: 768px) { .comm-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .comm-grid { grid-template-columns: 1fr; } }
+
+  </style>
 <link rel="preload" as="image" href="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/logo.png">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Orinoco Energy Group | Project Cargo & Energy Logistics">
@@ -675,6 +750,8 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#commodities">Commodities</a></li>
     <li><a href="#group">The Group</a></li>
     <li><a href="#compliance">Compliance</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -687,6 +764,8 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#coverage" onclick="closeMenu()">Coverage</a>
+  <a href="#commodities" onclick="closeMenu()">Commodities</a>
   <a href="#group" onclick="closeMenu()">The Group</a>
   <a href="#compliance" onclick="closeMenu()">Compliance</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -706,11 +785,12 @@ function closeMenu() {
   <div class="hero-poly"></div>
   <div class="hero-poly2"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Project Cargo &amp; Energy Logistics — The Americas</div>
+    <div class="hero-eyebrow">Procurement · Project Cargo · Energy Logistics — The Americas</div>
     <h1>THE CONTRACT.<br><em>THE EXECUTION.</em><br>THE RESULT.</h1>
     <p class="hero-sub">
       Orinoco Energy Group is the commercial platform of an integrated U.S.–Venezuela
-      logistics alliance. Contracting authority runs through <strong>OEG Internacional</strong>
+      alliance for end-to-end <strong>procurement</strong>, project cargo, and energy logistics.
+      Contracting authority runs through <strong>OEG Internacional</strong>
       — incorporated in Florida in 2015, OFAC-qualified, SAM.gov registered — backed by
       allied port, customs, and environmental operators with 7+ years at Puerto de Guanta.
     </p>
@@ -740,7 +820,7 @@ function closeMenu() {
     <div class="about-left">
       <div class="section-eyebrow">Who We Are</div>
       <h2>CONTRACT.<br>EXECUTE.<br>DELIVER.</h2>
-      <p>Orinoco Energy Group is the <strong>commercial platform</strong> of an integrated U.S.–Venezuela energy logistics alliance — bringing four allied operating entities under one accountable, branded interface for U.S. clients re-engaging with Venezuela.</p>
+      <p>Orinoco Energy Group is the <strong>commercial platform</strong> of an integrated U.S.–Venezuela alliance for procurement, project cargo, and energy logistics — bringing five allied operating entities under one accountable, branded interface for U.S. clients re-engaging with Venezuela.</p>
       <p>Contracting authority sits with <strong>OEG Internacional</strong> — a Florida corporation incorporated in 2015, SAM.gov registered, NVOCC &amp; IAC licensed, and qualified as an OFAC <em>established U.S. entity</em> for Venezuela General Licenses.</p>
       <p>Our allied operators bring <strong>7+ years at Puerto de Guanta</strong> — the only port in eastern Venezuela executing heavy-lift project cargo at scale, including equipment exceeding 300 tons for Faja del Orinoco operations.</p>
       
@@ -757,7 +837,7 @@ function closeMenu() {
       </div>
       <div class="about-card">
         <div class="about-card-title">Our Model</div>
-        <p>OEG Internacional contracts and moves the cargo. Servicios Logísticos OCK works the port. ADUAVEN clears customs. ECO GREEN handles environmental sanitation. Orinoco Energy Group is the unified commercial platform. One alliance. One accountability. Zero gaps in the chain.</p>
+        <p>OEG Internacional contracts and moves the cargo. Servicios Logísticos OCK works the port. ADUAVEN clears customs. ECO GREEN handles environmental sanitation. TUBINCA inspects and certifies asset integrity. Orinoco Energy Group is the unified commercial platform. One alliance. One accountability. Zero gaps in the chain.</p>
       </div>
     </div>
   </div>
@@ -774,7 +854,105 @@ function closeMenu() {
     <div class="svc-card"><div class="svc-num">03 — PORT OPERATIONS</div><div class="svc-title">Puerto de Guanta — Heavy Cargo</div><p class="svc-desc">Licensed port operations via Servicios Logísticos OCK. Stevedoring, heavy-lift up to 300+ tons, RoRo, container handling, vessel agency. 400+ vessels operated.</p></div>
     <div class="svc-card"><div class="svc-num">04 — CUSTOMS CLEARANCE</div><div class="svc-title">SENIAT-Registered Customs</div><p class="svc-desc">Full customs clearance via ADUAVEN, our allied SENIAT-registered broker. DAI/SDR filings, tariff classification, special regimes. Directly integrated — no third-party exposure.</p></div>
     <div class="svc-card"><div class="svc-num">05 — INLAND DELIVERY</div><div class="svc-title">Land Transport to the Faja</div><p class="svc-desc">Overland transport from Puerto de Guanta to Faja del Orinoco project sites, eastern Venezuelan refineries, and cryogenic facilities. Planned for oversized loads.</p></div>
-    <div class="svc-card"><div class="svc-num">06 — WAREHOUSING</div><div class="svc-title">Storage &amp; Inventory Management</div><p class="svc-desc">Cargo storage and inventory management in Miami (FL), Caracas, and Barcelona (Venezuela). Picking, packing, cross-docking, refrigerated storage, and vehicle storage.</p></div>
+    <div class="svc-card"><div class="svc-num">06 — WAREHOUSING &amp; 3PL</div><div class="svc-title">Warehousing, Yards &amp; Alliance Network</div><p class="svc-desc">Storage and inventory management in Miami and Houston (U.S.) and in Caracas, Barcelona, and La Guaira (Venezuela). Through a private alliance network we arrange 3PL, breakbulk and project-cargo yards, cross-docking, refrigerated and vehicle storage, and other specialized logistics services.</p></div>
+  </div>
+</section>
+
+<!-- END-TO-END COVERAGE -->
+<section class="corridor" id="coverage">
+  <div class="section-eyebrow">Single-Source Accountability</div>
+  <h2>FIRST MILE.<br>LAST MILE.</h2>
+  <p class="section-desc">One counterparty from the purchase order to the project site — procurement, origin coordination in the U.S., ocean transport to Venezuela, customs at destination, and final delivery. Every shipment is inspected by a neutral third party, insured, and tracked across every handoff, with maintenance available once on site.</p>
+  <div class="chain">
+    <div class="chain-node">
+      <div class="chain-step">01 — Procurement</div>
+      <div class="chain-title">Source &amp; Procure</div>
+      <div class="chain-desc">We source and buy the equipment and materials at origin — one purchase order, one accountable party.</div>
+    </div>
+    <div class="chain-node">
+      <div class="chain-step">02 — Origin · U.S.</div>
+      <div class="chain-title">Origin Coordination</div>
+      <div class="chain-desc">Pickup, consolidation, and staging at our Miami and Houston footprint, with neutral third-party inspection before loading.</div>
+    </div>
+    <div class="chain-node">
+      <div class="chain-step">03 — Ocean</div>
+      <div class="chain-title">Transport to Venezuela</div>
+      <div class="chain-desc">Full and partial charters, FCL and LCL — NVOCC &amp; IAC licensed through OEG Internacional.</div>
+    </div>
+    <div class="chain-node">
+      <div class="chain-step">04 — Destination</div>
+      <div class="chain-title">Customs &amp; Port</div>
+      <div class="chain-desc">SENIAT clearance via ADUAVEN and heavy-lift handling through allied port operator OCK.</div>
+    </div>
+    <div class="chain-node">
+      <div class="chain-step">05 — Last Mile</div>
+      <div class="chain-title">Final Delivery</div>
+      <div class="chain-desc">In-country warehousing (Caracas, Barcelona, La Guaira) and overland delivery to the project site.</div>
+    </div>
+  </div>
+  <div class="assure-grid">
+    <div class="assure">
+      <div class="assure-title">Neutral Third-Party Inspection</div>
+      <div class="assure-desc">Cargo is inspected and certified at origin by an independent, neutral surveyor — kept separate from the alliance's own inspection capabilities to avoid any conflict of interest.</div>
+    </div>
+    <div class="assure">
+      <div class="assure-title">Fully Insured</div>
+      <div class="assure-desc">Cargo is insured end-to-end through established underwriters — or under your own preferred policy if you carry one.</div>
+    </div>
+    <div class="assure">
+      <div class="assure-title">Origin &amp; Destination Footprint</div>
+      <div class="assure-desc">Own equipment and teams at U.S. origin (Miami, Houston) and at destination in Venezuela, with warehousing in Caracas, Barcelona, and La Guaira.</div>
+    </div>
+    <div class="assure">
+      <div class="assure-title">Maintenance &amp; On-Site Support</div>
+      <div class="assure-desc">Beyond delivery, the alliance can provide preventive and corrective maintenance and asset-integrity support at the project site.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMODITY LOGISTICS -->
+<section class="commodities" id="commodities">
+  <div class="section-eyebrow" style="color:var(--orange)">Export Backhaul</div>
+  <h2>COMMODITY<br>LOGISTICS.</h2>
+  <p class="section-desc">The corridor doesn't run empty. On the return leg, the alliance coordinates the export of Venezuelan commodities to U.S. and international buyers — experienced across the country's principal export categories, FOB-ready from origin.</p>
+  <div class="comm-grid">
+    <div class="comm-card">
+      <div class="comm-card-title">Cacao, Coffee &amp; Specialty Crops</div>
+      <ul class="comm-list">
+        <li>Cacao beans, butter &amp; liquor</li>
+        <li>Green coffee beans</li>
+        <li>Sesame (ajonjolí) &amp; cashews (merey)</li>
+        <li>Tonka beans</li>
+      </ul>
+    </div>
+    <div class="comm-card">
+      <div class="comm-card-title">Produce &amp; Seafood</div>
+      <ul class="comm-list">
+        <li>Mango, avocado, pineapple, citrus</li>
+        <li>Coconut</li>
+        <li>Shrimp &amp; lobster</li>
+        <li>Fish &amp; marine products</li>
+      </ul>
+    </div>
+    <div class="comm-card">
+      <div class="comm-card-title">Minerals &amp; Chemicals</div>
+      <ul class="comm-list">
+        <li>Sulfur</li>
+        <li>Carbon black</li>
+        <li>Cement clinker</li>
+        <li>Urea &amp; methanol</li>
+        <li>Iron ore</li>
+      </ul>
+    </div>
+    <div class="comm-card">
+      <div class="comm-card-title">Metals &amp; Forestry</div>
+      <ul class="comm-list">
+        <li>Aluminum ingots</li>
+        <li>Steel billets, rebar &amp; wire rod</li>
+        <li>Charcoal</li>
+        <li>Timber — pine, samán, teak</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -782,8 +960,8 @@ function closeMenu() {
 <section class="group" id="group">
   <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/monta%20carga%20heavy%20machinery.jpg" alt="Heavy machinery operations" class="group-banner" loading="lazy">
   <div class="section-eyebrow">The Execution Engine</div>
-  <h2>ONE CONTRACT.<br>FOUR DIVISIONS.</h2>
-  <p class="section-desc">Four allied operating entities. Each licensed and registered for the node it controls. Together — end-to-end execution from U.S. port to Venezuelan project site, with environmental compliance built in.</p>
+  <h2>ONE CONTRACT.<br>FIVE DIVISIONS.</h2>
+  <p class="section-desc">Five allied operating entities. Each licensed and registered for the node it controls. Together — end-to-end execution from U.S. origin to Venezuelan project site, with asset integrity and environmental compliance built in.</p>
   <div class="group-grid">
     <div class="group-card">
       <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/LOGO-OEG.png" loading="lazy" alt="OEG Internacional" style="height:60px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
@@ -793,7 +971,7 @@ function closeMenu() {
       <ul class="group-list">
         <li>NVOCC &amp; IAC licensed</li><li>Full &amp; partial vessel charters</li>
         <li>FCL from all Venezuelan ports</li><li>Commodity exports (scrap, minerals, oil byproducts)</li>
-        <li>Miami, Caracas, Barcelona warehousing</li>
+        <li>Miami, Caracas, Barcelona, La Guaira warehousing</li>
       </ul>
     </div>
     <div class="group-card">
@@ -830,6 +1008,46 @@ function closeMenu() {
         <li>Recovery of operational areas</li>
         <li>Port &amp; industrial site cleanup</li>
         <li>Aligned with O&amp;G reopening compliance</li>
+      </ul>
+    </div>
+    <div class="group-card">
+      <img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/tubinca%20negro%20naranja%202.png" alt="TUBINCA" style="height:60px;width:auto;object-fit:contain;display:block;margin-bottom:20px;" onerror="this.style.display='none'">
+      <div class="group-tag">Venezuela — Asset Integrity &amp; Inspection</div>
+      <div class="group-name">TUBINCA</div>
+      <p class="group-desc">Allied Venezuelan energy-services company with 10+ years in the Faja del Orinoco — industrial asset inspection, non-destructive testing, and field infrastructure for oil exploration, production, and refining. The alliance's in-country partner for asset integrity and operational continuity at the project site.</p>
+      <ul class="group-list">
+        <li>Industrial asset inspection</li>
+        <li>Non-destructive testing (NDT)</li>
+        <li>Industrial infrastructure execution</li>
+        <li>Critical asset integrity &amp; operational continuity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TUBINCA -->
+<section class="tubinca" id="tubinca">
+  <img class="tub-logo" src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/tubinca%20negro%20naranja%202.png" alt="TUBINCA" onerror="this.style.display='none'">
+  <div class="section-eyebrow">Energy Services Division — Venezuela</div>
+  <h2>ASSET INTEGRITY.<br>NON-STOP PRODUCTION.</h2>
+  <p class="tub-intro">TUBINCA is the alliance's allied energy-services company for oil exploration, production, and refining — 10+ years executing on-site in the Faja del Orinoco, where production cannot stop. <strong>Your technical partner, not a contractor.</strong></p>
+  <div class="tub-pillars">
+    <div class="tub-pillar">
+      <div class="tub-pillar-tag">01 — Inspection &amp; NDT</div>
+      <div class="tub-pillar-title">Inspection &amp; Non-Destructive Testing</div>
+      <ul class="tub-list">
+        <li>Electromagnetic &amp; ultrasonic testing — metal loss, cracks, discontinuities</li>
+        <li>Hydrostatic and magnetic-particle inspection</li>
+        <li>In-service tubular integrity &amp; API thread repair (5CT / 5B)</li>
+      </ul>
+    </div>
+    <div class="tub-pillar">
+      <div class="tub-pillar-tag">02 — Engineering &amp; Construction</div>
+      <div class="tub-pillar-title">Engineering, Construction &amp; Infrastructure</div>
+      <ul class="tub-list">
+        <li>Flowline &amp; pipeline laying with certified welding</li>
+        <li>API 650 tank fabrication &amp; E/M/I commissioning</li>
+        <li>Certified under ISO 9001:2015, ISO/IEC 17020 &amp; API</li>
       </ul>
     </div>
   </div>
@@ -871,23 +1089,21 @@ function closeMenu() {
 
 <!-- COMPLIANCE -->
 <section class="compliance" id="compliance">
-  <div class="compliance-grid">
-    <div class="compliance-left">
-      <div class="section-eyebrow">Regulatory Posture</div>
-      <h2>COMPLIANCE<br>FIRST.</h2>
-      <p>In a market where most operators are figuring out compliance reactively, our alliance built the framework before the business. Every transaction is structured, documented, and auditable.</p>
-      <p><strong>OEG Internacional</strong>, incorporated in Florida in 2015, qualifies as an OFAC <em>established U.S. entity</em> under the Venezuela General Licenses listed below. OEG Internacional is the contracting entity for any transaction within the scope of these authorizations.</p>
-      <div class="gl-badges">
-        <span class="gl-badge">GL 4C</span><span class="gl-badge">GL 30B</span>
-        <span class="gl-badge">OFAC GL 46B</span><span class="gl-badge">GL 47</span>
-        <span class="gl-badge">GL 48A</span><span class="gl-badge">GL 49A</span>
-        <span class="gl-badge">GL 50A</span><span class="gl-badge">GL 51A</span>
-        <span class="gl-badge">GL 52</span><span class="gl-badge">GL 53</span>
-        <span class="gl-badge">GL 54</span><span class="gl-badge">GL 55</span>
-        <span class="gl-badge">GL 56</span><span class="gl-badge">GL 57</span>
-      </div>
+  <div class="compliance-head">
+    <div class="section-eyebrow">Regulatory Posture</div>
+    <h2>COMPLIANCE FIRST.</h2>
+    <p>In a market where most operators are figuring out compliance reactively, our alliance built the framework before the business — every transaction structured, documented, and auditable. <strong>OEG Internacional</strong>, incorporated in Florida in 2015, qualifies as an OFAC <em>established U.S. entity</em> under the Venezuela General Licenses below, and is the contracting entity for any transaction within the scope of these authorizations.</p>
+    <div class="gl-badges">
+      <span class="gl-badge">GL 4C</span><span class="gl-badge">GL 30B</span>
+      <span class="gl-badge">OFAC GL 46B</span><span class="gl-badge">GL 47</span>
+      <span class="gl-badge">GL 48A</span><span class="gl-badge">GL 49A</span>
+      <span class="gl-badge">GL 50A</span><span class="gl-badge">GL 51A</span>
+      <span class="gl-badge">GL 52</span><span class="gl-badge">GL 53</span>
+      <span class="gl-badge">GL 54</span><span class="gl-badge">GL 55</span>
+      <span class="gl-badge">GL 56</span><span class="gl-badge">GL 57</span>
     </div>
-    <div class="comp-list">
+  </div>
+  <div class="comp-list">
       <div class="comp-item"><div class="comp-icon">✓</div><div><div class="comp-title">OFAC Established U.S. Entity</div><div class="comp-desc">An "established U.S. entity" must have been organized under the laws of the U.S. or any jurisdiction within the U.S. on or before January 29, 2025. OEG Internacional, incorporated in Florida in 2015, qualifies well before that cutoff under Venezuela General Licenses 46B, 48A, 49A, 50A, 51A, 52, 54, and 55.</div></div></div>
       <div class="comp-item"><div class="comp-icon">✓</div><div><div class="comp-title">SAM.gov Registered</div><div class="comp-desc">OEG Internacional is registered in the U.S. System for Award Management — eligible for U.S. federal programs, government-adjacent contracts, and U.S. export credit agency frameworks once Venezuela coverage reopens.</div></div></div>
       <div class="comp-item"><div class="comp-icon">✓</div><div><div class="comp-title">FCPA Aligned</div><div class="comp-desc">Anti-bribery policy, documented financial controls, and third-party due diligence for every Venezuelan-nexus transaction.</div></div></div>
@@ -898,7 +1114,6 @@ function closeMenu() {
       <div class="comp-item"><div class="comp-icon">✓</div><div><div class="comp-title">Environmental Compliance</div><div class="comp-desc">Allied environmental services arm (ECO GREEN Soluciones Industriales) provides industrial and well sanitation, remediation, and recovery of operational areas — closing the environmental loop for O&amp;G reopening, port operations, and industrial clients.</div></div></div>
       <div class="comp-item"><div class="comp-icon">✓</div><div><div class="comp-title">2026 Venezuela Hydrocarbons Law</div><div class="comp-desc">Framework allows private operator contracts under U.S. governing law and U.S. dispute resolution — directly aligned with OFAC GL contracting requirements.</div></div></div>
     </div>
-  </div>
 </section>
 
 <!-- CONTACT -->
@@ -975,10 +1190,10 @@ function sendInquiry(e) {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">ORINOCO <span>ENERGY</span> GROUP</div>
+  <a href="#" class="footer-brand-logo"><img src="https://raw.githubusercontent.com/dmencia2/orinocoenergygroup.com/main/horizontal%20NARANJA_BLANCO.png" alt="Orinoco Energy Group"></a>
   <div class="footer-copy">© 2026 Orinoco Energy Group. All rights reserved.</div>
   <div class="footer-comp">
-    OEG INTERNACIONAL · SERVICIOS LOGÍSTICOS OCK · ADUAVEN · ECO GREEN<br>
+    OEG INTERNACIONAL · SERVICIOS LOGÍSTICOS OCK · ADUAVEN · ECO GREEN · TUBINCA<br>
     OFAC GL 46B AUTHORIZED · SAM.GOV REGISTERED · FCPA ALIGNED
   </div>
 </footer>
