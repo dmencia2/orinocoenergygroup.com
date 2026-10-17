@@ -138,3 +138,28 @@ body{background:#f4f2ed}
 @media(max-width:360px){.site-header .brand{max-width:128px}.header-controls{gap:6px}.menu-toggle{padding:7px 6px}.language-switch a{min-width:26px}}
 .service-detail>*,.trade-intro>*,.contact-layout>*,.value-grid>*{min-width:0}
 @media(max-width:360px){h1,.page-heading h1,.home-hero h1{font-size:30px}h2{font-size:27px}h3{font-size:21px}.button{max-width:100%;gap:18px}.button>span{flex-shrink:0}.text-link{max-width:100%;white-space:normal;gap:12px}.explorer-detail>a{white-space:normal}h1,h2,h3{overflow-wrap:anywhere}}
+
+/* Company credentials: attributed records, separate from service copy. */
+.credentials-band{padding:32px 0 35px;background:#e9edf0;border-block:1px solid #d1dbe2}
+.credentials-band .eyebrow{font-size:10px;margin-bottom:18px}
+.credentials-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.credentials-grid a{display:block;min-width:0;border-left:2px solid var(--orange);padding-left:14px}
+.credentials-grid strong{display:block;font:700 11px/1.6 Montserrat,sans-serif;color:var(--navy);letter-spacing:.025em}
+.credentials-grid span{display:block;font-size:11px;line-height:1.7;color:var(--muted);margin-top:5px}
+.credentials-grid a:hover strong{text-decoration:underline;text-underline-offset:3px}
+.company-records-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:32px}
+.company-records-grid article{border-top:2px solid var(--orange);padding-top:20px;min-width:0}
+.company-records-grid h3{font-size:19px;color:var(--navy);margin-bottom:14px}
+.company-records-grid p{font-size:14px}
+.credentials-note{font-size:12px;margin-top:26px;max-width:880px}
+.company-records>.text-link,.authorization-scope>.text-link{margin-top:18px}
+.authorization-list{margin:32px 0 0;max-width:920px}
+.authorization-list>div{display:grid;grid-template-columns:95px minmax(0,1fr);gap:22px;padding:20px 0;border-top:1px solid var(--line)}
+.authorization-list dt{font:700 13px/1.7 Montserrat,sans-serif;color:var(--navy)}
+.authorization-list dt a{text-decoration:underline;text-underline-offset:4px}
+.authorization-list dd{margin:0;color:var(--muted);font-size:14px}
+.group-registration-note{grid-column:1/-1;border-top:1px solid var(--line);padding-top:28px;max-width:920px}
+.group-registration-note h3{font-size:20px;color:var(--navy);margin-bottom:12px}
+.group-registration-note .text-link{margin-top:12px}
+@media(max-width:960px){.credentials-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.company-records-grid{grid-template-columns:1fr;gap:25px}}
+@media(max-width:480px){.credentials-band{padding:26px 0}.credentials-grid{gap:20px 14px}.credentials-grid strong{font-size:10px}.credentials-grid span{font-size:10px}.credentials-grid a{padding-left:10px}.authorization-list>div{grid-template-columns:1fr;gap:8px}}
