@@ -50,3 +50,6 @@
 
 /* Cargo-planning note beneath the interactive network. */
 .map-routing-note{margin:0;padding:18px 24px;border-top:1px solid rgba(255,255,255,.16);color:#c5d5e6;font-size:.78rem;line-height:1.6;background:#092c50}
+
+/* Preserve transparent logo assets in dark appearance, including System mode. */
+html[data-theme=dark] .logo-strip img,html[data-theme=dark] .entity-logo{background:transparent;border-radius:0}
