@@ -1,6 +1,10 @@
 'use strict';
 (()=>{
  const spanish=document.documentElement.lang==='es',dict=window.OEG_ES||{};
+ try{if(!spanish&&localStorage.getItem('oeg-language')==='es'){
+  const here=new URL(location.href),folder=here.pathname.slice(0,here.pathname.lastIndexOf('/')+1),page=here.pathname.split('/').pop()||'index.html';
+  here.pathname=folder+'es/'+page;location.replace(here.href);return;
+ }}catch{}
  function tr(value){
   if(!spanish||!value)return value;
   if(dict[value])return dict[value];
@@ -17,7 +21,7 @@
   return value;
  }
  window.OEG_T=tr;
- document.querySelectorAll('[data-language]').forEach(link=>{const url=new URL(link.href);url.search=location.search;url.hash=location.hash;link.href=url.href;});
+ document.querySelectorAll('[data-language]').forEach(link=>{link.addEventListener('click',()=>{try{localStorage.setItem('oeg-language',link.dataset.language);}catch{}});const url=new URL(link.href);url.search=location.search;url.hash=location.hash;link.href=url.href;});
  if(!spanish)return;
  function text(node){const raw=node.nodeValue,trimmed=raw.trim(),translated=tr(trimmed);if(trimmed!==translated)node.nodeValue=raw.replace(trimmed,translated);}
  function translate(root){
