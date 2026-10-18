@@ -211,3 +211,8 @@ body{background:#f4f2ed}
 .alliance-strip .logo-cell{flex:1 0 130px;width:auto;min-width:130px;height:76px;scroll-snap-align:start}
 .alliance-strip .logo-cell img{width:100%;max-width:170px!important;height:64px;max-height:64px!important}
 @media(max-width:720px){.alliance-strip .logo-strip{gap:30px;padding:12px 0 18px}.alliance-strip .logo-cell{flex:0 0 140px;min-width:140px;height:64px}.alliance-strip .logo-cell img{height:58px;max-height:58px!important}}
+
+/* Bound action icons even in narrow navigation and footer columns. */
+.site-header .nav-contact{display:inline-flex;align-items:center;justify-content:center;min-height:44px;line-height:1.5;white-space:nowrap}
+svg.ui-icon{max-width:24px;max-height:24px;flex-shrink:0}
+.footer-main a>svg.ui-icon{display:inline-block;width:16px;height:16px;margin-left:5px;vertical-align:middle}
