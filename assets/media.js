@@ -7,8 +7,10 @@
  else if(typeof item.mp4==='string'&&/^assets\/videos\/[\w./-]+\.mp4$/i.test(item.mp4)&&!item.mp4.includes('..'))mp4=item.mp4;else return;
  const poster=figure.querySelector('img');if(!poster)return;const visual=poster.closest('picture')||poster;const title=item.title||'Orinoco Energy Group operation';const frame=document.createElement('div');frame.className='media-frame';visual.before(frame);frame.append(visual);const play=document.createElement('button');play.type='button';play.className='media-play';play.setAttribute('aria-label','Play video: '+title);play.innerHTML='<span aria-hidden="true"><svg class="play-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><b>Watch the operation</b>';frame.append(play);
  let caption=figure.querySelector('figcaption');if(!caption){caption=document.createElement('figcaption');figure.append(caption);}if(item.caption)caption.textContent=item.caption;
- play.addEventListener('click',()=>{
+ play.addEventListener('click',async()=>{
   if(youtubeId&&localFile){let note=caption.querySelector('.media-local-note');if(!note){note=document.createElement('span');note.className='media-local-note';note.setAttribute('role','status');caption.append(note);}note.textContent='Open the web preview to play this video inside the page. Playback is unavailable when this HTML file is opened directly.';return;}
+  if(youtubeId&&(!window.OEGPrivacy||!await window.OEGPrivacy.permitVideo()))return;
+  if(frame.querySelector('iframe,video'))return;
   const active=document.createElement(youtubeId?'iframe':'video');active.className='operation-player';
   if(youtubeId){active.src='https://www.youtube-nocookie.com/embed/'+youtubeId+'?autoplay=1&playsinline=1&hl='+document.documentElement.lang+'&origin='+encodeURIComponent(location.origin);active.title=title;active.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';active.allowFullscreen=true;active.referrerPolicy='strict-origin-when-cross-origin';}
   else{active.controls=true;active.playsInline=true;active.preload='none';active.src=mp4;active.setAttribute('aria-label',title);}

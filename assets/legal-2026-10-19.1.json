@@ -1,0 +1,256 @@
+{
+  "version": "2026-10-19.1",
+  "effective_date": "2026-10-19",
+  "documents": {
+    "privacy.html": {
+      "title": "Privacy policy",
+      "language": "en",
+      "sha256": "cb11aa890e5d106de897ba9720d227d895c05cae27f2558d1b625e4cad6097df",
+      "content": {
+        "title": "Privacy policy",
+        "lead": "How we handle information shared through this website and our project enquiry channels.",
+        "sections": [
+          [
+            "Who handles your enquiry",
+            "Orinoco Energy Group is the commercial identity presented on this website. OEG Internacional Inc (United States) and Orinoco Energy Group, C.A. (Venezuela) coordinate enquiries according to their role in the proposed project. The quotation or contract identifies the company that will provide each service. OCK Servicios Logísticos, ADUAVEN, ECO GREEN and TUBINCA are not interchangeable legal entities; they receive information only when relevant to their participation. For privacy questions or to identify the company handling your enquiry, contact info@orinocoenergygroup.com."
+          ],
+          [
+            "Information we request",
+            "For an initial enquiry we request your name, email and project description. Procurement enquiries also require the equipment or material, quantity, requested scope, and destination country and city. Company, supplier, delivery details, target date and supporting documents are optional. We do not request identification documents, bank details, passwords, health information or payment-card information through this form. Share only information necessary to assess the project; redact unrelated personal or confidential information from attachments."
+          ],
+          [
+            "Purpose and your choices",
+            "We use enquiry information to respond, assess technical and delivery requirements, compare supplier or logistics options, prepare quotations and follow up the requested project. The privacy checkbox authorizes handling for this enquiry; it is separate from acceptance of the website terms and does not authorize newsletters or unrelated marketing. Applicable contractual, legal, security and record-preservation requirements may also justify retaining relevant information. You may withdraw your enquiry authorization by emailing info@orinocoenergygroup.com; this does not reverse previous lawful handling or remove records that must be retained."
+          ],
+          [
+            "Services and recipients",
+            "The site is hosted on GitHub Pages. GitHub may process technical access data, including IP addresses, for hosting and security. Form submissions and optional attachments are transmitted through FormSubmit to bd@orinocoenergygroup.com and handled by the group's email service. FormSubmit states that it retains a submission archive for 30 days and does not retain attachments in that archive. Its platform and anti-spam processing are governed by its own policy. Necessary project information may be shared with the relevant group company, supplier, carrier, customs specialist or operating partner to assess or perform your request; we do not sell enquiry information or use it for advertising audiences."
+          ],
+          [
+            "Videos and external links",
+            "The map, photos and fonts are served with the site; the map is not a Google Maps embed. YouTube videos are blocked until you permit optional video content. If permitted, YouTube/Google may receive your IP address and device information and use cookies or similar storage under their policies, even in privacy-enhanced mode. WhatsApp, LinkedIn, Calendly and other external services are contacted when you choose their links and operate under their own terms. Opening an external link is not a blanket authorization for this site to use advertising cookies."
+          ],
+          [
+            "International handling",
+            "Enquiries may be accessed or processed in the United States, Venezuela and countries where the relevant hosting, form, email and project providers operate. The applicable protections and legal obligations depend on the recipient and transaction. We limit project disclosures to their purpose and do not represent that every provider's processing takes place in Venezuela."
+          ],
+          [
+            "Enquiry and acceptance records",
+            "Each completed form submission includes the separate checkbox values, their browser-reported UTC times, document version, document links, interface language, enquiry identifier and submission channel. The received email and its mail-server headers provide a receipt record. These are ordinary enquiry records, not a certified electronic signature or an independent, tamper-proof consent database. Cookie preferences are stored in your browser and are not sent to a separate consent database. We retain enquiry and related acceptance records for the period needed to handle the request, a resulting commercial relationship, applicable legal duties or a legitimate dispute, and review records for deletion when those purposes end. FormSubmit's 30-day archive is not our long-term record system."
+          ],
+          [
+            "Access, correction and deletion",
+            "Email info@orinocoenergygroup.com to request access to your information, its correction, deletion or restriction, to withdraw an authorization, or to ask about a disclosure. Include the email address used for the enquiry and enough context to locate it. We may verify identity proportionately; do not send identity documents unless specifically needed and securely requested. We will explain any legal reason that prevents fulfilling a request and any applicable response period. This channel does not limit mandatory rights or recourse to competent authorities or courts, including rights under Venezuela's Constitution."
+          ],
+          [
+            "Security, audience and updates",
+            "We use HTTPS and limit collection through the enquiry form, but no website or email system is risk-free. This is a business enquiry website, not a service aimed at children. Do not submit children's data. Changes will be dated and versioned here; material new purposes requiring authorization will not be covered by a previous checkbox. Cookie choices can be changed through Preferences in the footer."
+          ]
+        ]
+      }
+    },
+    "es/privacy.html": {
+      "title": "Política de privacidad",
+      "language": "es",
+      "sha256": "1fdc2fa647de0b0ad03657c8d8a188ded0d9d9760d8a7749294a9375fe34560b",
+      "content": {
+        "title": "Política de privacidad",
+        "lead": "Cómo tratamos la información que compartes a través de esta web y nuestros canales de consulta.",
+        "sections": [
+          [
+            "Quién atiende tu consulta",
+            "Orinoco Energy Group es la identidad comercial presentada en esta web. OEG Internacional Inc (Estados Unidos) y Orinoco Energy Group, C.A. (Venezuela) coordinan las consultas según su participación en el proyecto propuesto. La cotización o el contrato identifica la empresa que prestará cada servicio. OCK Servicios Logísticos, ADUAVEN, ECO GREEN y TUBINCA no son entidades jurídicas intercambiables: reciben información únicamente cuando corresponde a su participación. Para consultas de privacidad o para identificar la empresa que atiende tu requerimiento, escribe a info@orinocoenergygroup.com."
+          ],
+          [
+            "Datos que solicitamos",
+            "Para una consulta inicial pedimos nombre, correo y descripción del proyecto. En procura también solicitamos equipo o material, cantidad, alcance y país y ciudad de destino. La empresa, el suplidor, los detalles de entrega, la fecha prevista y los documentos de respaldo son opcionales. Este formulario no solicita documentos de identidad, datos bancarios, contraseñas, información de salud ni tarjetas de pago. Comparte solo lo necesario para evaluar el proyecto y oculta los datos personales o confidenciales ajenos a la consulta en los adjuntos."
+          ],
+          [
+            "Finalidades y tus decisiones",
+            "Usamos la información para responder, evaluar requisitos técnicos y de entrega, comparar alternativas de suministro o logística, preparar cotizaciones y dar seguimiento al proyecto solicitado. La casilla de privacidad autoriza el tratamiento para esta consulta; es independiente de la aceptación de los términos de la web y no autoriza boletines ni publicidad ajena al requerimiento. Las obligaciones contractuales, legales, de seguridad y de conservación también pueden justificar mantener información pertinente. Puedes retirar la autorización escribiendo a info@orinocoenergygroup.com; ello no revierte tratamientos lícitos anteriores ni elimina documentos que deban conservarse."
+          ],
+          [
+            "Servicios y destinatarios",
+            "La web se aloja en GitHub Pages. GitHub puede tratar datos técnicos de acceso, incluida la dirección IP, para alojamiento y seguridad. El formulario y sus adjuntos se transmiten mediante FormSubmit a bd@orinocoenergygroup.com y se gestionan en el servicio de correo del grupo. FormSubmit informa que conserva un archivo de envíos durante 30 días y que ese archivo no conserva adjuntos. Su plataforma y sus controles antispam se rigen por su propia política. La información necesaria del proyecto puede compartirse con la empresa del grupo, suplidor, transportista, especialista aduanero o aliado operativo pertinente para evaluar o ejecutar tu solicitud; no vendemos los datos de consulta ni los destinamos a audiencias publicitarias."
+          ],
+          [
+            "Videos y enlaces externos",
+            "El mapa, las fotografías y las fuentes se sirven con la web; el mapa no es una integración de Google Maps. Los videos de YouTube permanecen bloqueados hasta que autorices el contenido opcional. Si lo permites, YouTube/Google puede recibir tu IP e información del dispositivo y usar cookies o almacenamiento similar conforme a sus políticas, incluso en modo de privacidad mejorada. WhatsApp, LinkedIn, Calendly y otros servicios externos se contactan cuando eliges sus enlaces y funcionan bajo sus propios términos. Abrir un enlace externo no autoriza de forma general las cookies publicitarias en esta web."
+          ],
+          [
+            "Tratamiento internacional",
+            "Las consultas pueden ser accedidas o tratadas en Estados Unidos, Venezuela y los países donde operan los proveedores de alojamiento, formulario, correo y servicios del proyecto. Las protecciones y obligaciones dependen del destinatario y la operación. Limitamos las comunicaciones a su finalidad y no afirmamos que todos los proveedores traten los datos dentro de Venezuela."
+          ],
+          [
+            "Registro de consultas y aceptaciones",
+            "Cada envío completo incluye el valor de las dos casillas por separado, las horas UTC declaradas por el navegador, la versión y los enlaces de los documentos, el idioma, un identificador y el canal de envío. El correo recibido y sus encabezados del servidor aportan constancia de recepción. Son registros ordinarios de consulta, no una firma electrónica certificada ni una base de consentimientos independiente e inalterable. Las preferencias de cookies se guardan en tu navegador y no se envían a otra base de datos. Conservamos la consulta y sus aceptaciones durante el tiempo necesario para atenderla, gestionar una relación comercial posterior, cumplir obligaciones legales o atender una controversia legítima, y revisamos su eliminación cuando terminan esas finalidades. El archivo de 30 días de FormSubmit no es nuestro sistema de conservación a largo plazo."
+          ],
+          [
+            "Acceso, corrección y eliminación",
+            "Escribe a info@orinocoenergygroup.com para solicitar acceso, corrección, eliminación o limitación de tus datos, retirar una autorización o consultar una comunicación de información. Indica el correo usado y el contexto necesario para localizar la consulta. Podemos verificar tu identidad de forma proporcional; no envíes documentos de identidad salvo solicitud justificada y mediante un canal seguro. Explicaremos cualquier motivo legal que impida atender una solicitud y el plazo aplicable. Este canal no limita derechos obligatorios ni el recurso ante autoridades o tribunales competentes, incluidos los derechos reconocidos por la Constitución venezolana."
+          ],
+          [
+            "Seguridad, destinatarios y cambios",
+            "Usamos HTTPS y limitamos los datos solicitados, pero ningún sistema web o de correo está exento de riesgos. Esta web atiende consultas empresariales y no está dirigida a niños. No envíes datos de menores. Los cambios tendrán fecha y versión; las nuevas finalidades que requieran autorización no quedarán cubiertas por una casilla anterior. Puedes modificar las cookies desde Preferencias, en el pie de página."
+          ]
+        ]
+      }
+    },
+    "terms.html": {
+      "title": "Terms and conditions",
+      "language": "en",
+      "sha256": "a229bac552a10edc8c6519d99b0c4cb47a5e9d9ebaca41c40e9dca97adbfb961",
+      "content": {
+        "title": "Terms and conditions",
+        "lead": "Website use and the basis for requesting procurement, energy and logistics services.",
+        "sections": [
+          [
+            "Website and companies",
+            "These terms govern use of orinocoenergygroup.com and its enquiry tools. Orinoco Energy Group is the group's commercial identity. The website presents OEG Internacional Inc in the United States and Orinoco Energy Group, C.A. in Venezuela, together with the specialist companies and allies described in The Group. A group name, logo or shared contact channel does not make all companies parties to a contract. The quotation, order confirmation or signed agreement must identify the contracting entity and the agreed responsibilities."
+          ],
+          [
+            "Enquiries are not orders",
+            "Submitting a form requests a commercial response. It does not place a purchase order, reserve space, authorize expenditure, create a customs mandate or conclude a transport or supply contract. Offers, technical alternatives, commercial terms and scope require separate written confirmation. This site does not collect payments or offer an online checkout."
+          ],
+          [
+            "Project scope and representations",
+            "Supply, transport, customs, handling, environmental services and inspection are contracted according to the project. Timetables, prices, supplier availability, permits and cargo acceptance must be confirmed for the shipment. Map lines are planning illustrations, not guaranteed sailings or transit times. Historical OCK figures describe specific experience and are not productivity guarantees. Registrations and authorizations relate to the relevant entity and activity; none is a blanket authorization for every transaction."
+          ],
+          [
+            "Information you provide",
+            "Provide accurate information and only material you are authorized to share. Do not upload passwords, identification documents, payment-card details, unrelated personal data or restricted third-party material. The enquiry channel is not a secure data room for export-controlled, classified or highly sensitive project information. Ask us to agree a suitable channel or confidentiality arrangement when needed. We may ask for clarification before preparing a quotation."
+          ],
+          [
+            "Prices, cancellation and refunds",
+            "No purchase or payment is completed through this website, so it does not offer a general online refund programme. Before any paid order, the contracting entity and customer must agree the price, payment milestones, supplier commitments, cancellation rights, return conditions and any refund calculation in the applicable quotation or contract. Do not assume that bespoke equipment, third-party freight or services already performed can be cancelled without cost. Nothing here excludes mandatory consumer rights, applicable remedies or refunds required by law. Questions about an existing order should identify the contracting company and order reference and be sent to bd@orinocoenergygroup.com."
+          ],
+          [
+            "Intellectual property",
+            "Photos, videos, logos, written content and design remain protected by the rights of their respective owners or licensors. Viewing this site does not grant a licence to republish media, remove watermarks, use company marks or imply endorsement. Written permission is required unless a legal exception applies. Third-party names or equipment visible in operational footage do not by themselves imply a commercial relationship or endorsement. Rights concerns can be sent to info@orinocoenergygroup.com with the material and basis of the claim."
+          ],
+          [
+            "External services and availability",
+            "External links and optional embedded videos are provided for their stated purpose and follow their providers' policies. We do not guarantee uninterrupted availability, third-party content or error-free information. We will review notified errors. Any liability limitation is only to the extent permitted by applicable law; these terms do not exclude liability or rights that cannot lawfully be excluded."
+          ],
+          [
+            "Applicable rules and contact",
+            "Mandatory laws applicable to the website user, the relevant company and the transaction remain in force, including applicable Venezuelan and U.S. requirements. The commercial agreement should identify its governing law and dispute mechanism. These website terms do not impose an exclusive foreign forum or waive mandatory rights. Contact info@orinocoenergygroup.com regarding these terms. Changes will have a new version and date; they do not silently change an already agreed commercial contract."
+          ]
+        ]
+      }
+    },
+    "es/terms.html": {
+      "title": "Términos y condiciones",
+      "language": "es",
+      "sha256": "620029b65354423868ed2d0835949e8e11bd2b4c88476081abdc1c982b4033c7",
+      "content": {
+        "title": "Términos y condiciones",
+        "lead": "Uso de la web y condiciones para solicitar servicios de procura, energía y logística.",
+        "sections": [
+          [
+            "La web y las empresas",
+            "Estos términos regulan el uso de orinocoenergygroup.com y sus herramientas de consulta. Orinoco Energy Group es la identidad comercial del grupo. La web presenta a OEG Internacional Inc en Estados Unidos y Orinoco Energy Group, C.A. en Venezuela, junto con las empresas y aliados especializados descritos en El grupo. Una marca, un logo o un canal compartido no convierte a todas las empresas en partes de un contrato. La cotización, confirmación de pedido o acuerdo firmado debe identificar la entidad contratante y las responsabilidades acordadas."
+          ],
+          [
+            "Una consulta no es un pedido",
+            "Enviar el formulario solicita una respuesta comercial. No constituye una orden de compra, reserva de espacio, autorización de gastos, mandato aduanero ni contrato de transporte o suministro. Las ofertas, alternativas técnicas, condiciones comerciales y alcance requieren confirmación escrita independiente. Esta web no cobra pagos ni dispone de un proceso de compra en línea."
+          ],
+          [
+            "Alcance y comunicaciones del proyecto",
+            "El suministro, transporte, gestión aduanera, manejo, servicios ambientales e inspección se contratan según el proyecto. Las salidas, precios, disponibilidad, permisos y aceptación de la carga deben confirmarse para cada embarque. Las líneas del mapa ilustran planificación; no garantizan servicios ni tiempos de tránsito. Las cifras históricas de OCK corresponden a experiencias específicas y no garantizan productividad. Los registros y autorizaciones corresponden a cada entidad y actividad, sin habilitar de forma general todas las operaciones."
+          ],
+          [
+            "Información que compartes",
+            "Aporta información correcta y solo material que estés autorizado a comunicar. No adjuntes contraseñas, documentos de identidad, tarjetas de pago, datos personales ajenos al proyecto ni material de terceros sujeto a restricciones. Este canal no es una sala segura para información clasificada, altamente sensible o sujeta a controles de exportación. Si hace falta, acordemos un canal adecuado o un compromiso de confidencialidad. Podemos solicitar aclaraciones antes de preparar una cotización."
+          ],
+          [
+            "Precios, cancelaciones y reembolsos",
+            "La web no formaliza compras ni recibe pagos, por lo que no ofrece un programa general de reembolsos en línea. Antes de un pedido pagado, la entidad contratante y el cliente deben acordar precio, hitos de pago, compromisos con suplidores, cancelaciones, devoluciones y cálculo de reembolsos en la cotización o el contrato correspondiente. No debe presumirse que equipos a medida, fletes de terceros o servicios ya ejecutados puedan cancelarse sin costo. Nada de lo anterior excluye derechos obligatorios del consumidor, remedios aplicables o reembolsos exigidos por ley. Para consultar un pedido existente, identifica la empresa contratante y la referencia y escribe a bd@orinocoenergygroup.com."
+          ],
+          [
+            "Propiedad intelectual",
+            "Las fotografías, videos, logos, textos y diseño están protegidos por los derechos de sus respectivos titulares o licenciantes. Consultar la web no autoriza republicar archivos, retirar marcas de agua, usar las marcas ni atribuir respaldos comerciales. Se requiere permiso escrito salvo excepción legal aplicable. La presencia de nombres o equipos de terceros en una operación no implica por sí sola una relación comercial ni un respaldo. Comunica una reclamación de derechos a info@orinocoenergygroup.com identificando el material y su fundamento."
+          ],
+          [
+            "Servicios externos y disponibilidad",
+            "Los enlaces y videos opcionales se ofrecen para su finalidad indicada y están sujetos a las políticas de sus proveedores. No garantizamos disponibilidad ininterrumpida, contenido de terceros ni información sin errores. Revisaremos los errores que se nos comuniquen. Cualquier limitación de responsabilidad solo opera hasta donde lo permita la ley; no se excluyen responsabilidades ni derechos que legalmente no puedan excluirse."
+          ],
+          [
+            "Normas aplicables y contacto",
+            "Se mantienen las normas obligatorias aplicables al usuario, a la empresa y a la operación, incluidos los requisitos pertinentes de Venezuela y Estados Unidos. El acuerdo comercial debe precisar su ley aplicable y mecanismo de controversias. Estos términos de la web no imponen un foro extranjero exclusivo ni renuncias a derechos obligatorios. Escribe a info@orinocoenergygroup.com sobre estos términos. Los cambios tendrán nueva fecha y versión y no modificarán de forma silenciosa un contrato comercial ya acordado."
+          ]
+        ]
+      }
+    },
+    "cookies.html": {
+      "title": "Cookies and preferences",
+      "language": "en",
+      "sha256": "fd101a6d6b219609bb31df8f2a4b215da3001d5b07385216a0a1ea557c3562d6",
+      "content": {
+        "title": "Cookies and preferences",
+        "lead": "A lightweight site with optional video content under your control.",
+        "sections": [
+          [
+            "Before you permit optional content",
+            "The site's own pages do not install analytics or advertising cookies. Photos, fonts and the interactive route map are hosted with the site. No Google Maps, Google Analytics, advertising pixel or externally loaded font is installed in this version. GitHub Pages still receives technical connection information to deliver and protect the site; this is different from an advertising cookie."
+          ],
+          [
+            "Functional browser storage",
+            "oeg-language stores your explicitly chosen language in localStorage until you clear it. oeg-privacy-choice-v1 stores your allow/decline video choice, document version, browser-reported time and a random record identifier for up to 180 days. These local values support your requested preference and are not advertising identifiers. The enquiry form itself is not saved to browser storage. You can delete site storage in your browser, which will reset the saved choices."
+          ],
+          [
+            "Optional YouTube videos",
+            "No YouTube iframe is created before permission. Pressing play opens a short permission prompt unless you have already allowed videos. You may permit videos or keep essential functions only, with equal access to both choices. If allowed, the video loads from youtube-nocookie.com in privacy-enhanced mode. Google may nevertheless process connection and viewing data and use cookies or other storage during playback. Exact names and lifetimes depend on Google and your browser; we do not claim this mode prevents all tracking. Videos are optional and the rest of the site remains available if declined."
+          ],
+          [
+            "Change or withdraw your choice",
+            "Use Preferences in the footer to change your selection. Declining stops currently embedded YouTube videos and blocks new ones. It cannot erase cookies already set on a third-party domain; use browser controls for those. Closing the prompt without choosing does not authorize video loading. No optional content is enabled merely by scrolling or continuing to browse."
+          ],
+          [
+            "Forms and external destinations",
+            "FormSubmit and its anti-spam services may process data and use their own storage when you send a form. Those services are not loaded as an iframe or tracking script on page entry. WhatsApp, LinkedIn and Calendly may use cookies on their sites after you follow a link. Their practices are governed by their policies and your browser settings. The website does not add an advertising category to these external links."
+          ],
+          [
+            "Questions and changes",
+            "Contact info@orinocoenergygroup.com for questions. A new video-consent version or expiry will require a new choice before optional videos load. The Privacy policy explains enquiry handling and individual requests. See the provider policies linked below for technical information."
+          ]
+        ]
+      }
+    },
+    "es/cookies.html": {
+      "title": "Cookies y preferencias",
+      "language": "es",
+      "sha256": "cae86c46e11ff64e60301450c8161e7cbc754852e6d492fd3d9df9534e644a13",
+      "content": {
+        "title": "Cookies y preferencias",
+        "lead": "Una web ligera, con videos opcionales que tú decides cargar.",
+        "sections": [
+          [
+            "Antes de autorizar contenido opcional",
+            "Las páginas propias no instalan cookies de analítica ni publicidad. Las fotografías, fuentes y mapa interactivo de rutas se alojan con la web. Esta versión no incorpora Google Maps, Google Analytics, píxeles publicitarios ni fuentes cargadas desde otros dominios. GitHub Pages recibe datos técnicos de conexión para servir y proteger la web; eso no equivale a una cookie publicitaria."
+          ],
+          [
+            "Almacenamiento funcional del navegador",
+            "oeg-language guarda el idioma que eliges expresamente en localStorage hasta que lo eliminas. oeg-privacy-choice-v1 conserva durante un máximo de 180 días tu decisión de permitir o rechazar videos, la versión, la hora declarada por el navegador y un identificador aleatorio. Estos valores locales permiten recordar tu preferencia y no son identificadores publicitarios. El formulario no se guarda en el navegador. Puedes borrar el almacenamiento del sitio para restablecer las decisiones."
+          ],
+          [
+            "Videos opcionales de YouTube",
+            "No se crea ningún iframe de YouTube antes de tu autorización. Al pulsar reproducir aparece una explicación breve, salvo que ya hayas permitido los videos. Puedes permitirlos o mantener solo funciones esenciales con la misma facilidad. Al autorizarlos, se carga el video desde youtube-nocookie.com en modo de privacidad mejorada. Google puede, aun así, tratar datos de conexión y reproducción y utilizar cookies u otro almacenamiento. Sus nombres y duración dependen de Google y del navegador; no afirmamos que ese modo evite todo seguimiento. Rechazarlos no impide consultar el resto de la web."
+          ],
+          [
+            "Cambiar o retirar tu decisión",
+            "Usa Preferencias, en el pie de página, para cambiar la selección. Rechazar los videos detiene los de YouTube que estén abiertos y bloquea nuevas cargas. No elimina las cookies ya creadas en un dominio ajeno; para ello utiliza los controles del navegador. Cerrar el aviso sin elegir no autoriza la carga. Desplazarse por la página o seguir navegando tampoco activa contenido opcional."
+          ],
+          [
+            "Formularios y destinos externos",
+            "FormSubmit y sus controles antispam pueden tratar datos y usar su propio almacenamiento al enviar una consulta. No se cargan como iframe ni como script de seguimiento al abrir esta web. WhatsApp, LinkedIn y Calendly pueden usar cookies en sus páginas cuando sigues un enlace. Sus prácticas dependen de sus políticas y de tu navegador. Esta web no convierte esos enlaces en una categoría de publicidad."
+          ],
+          [
+            "Consultas y cambios",
+            "Escribe a info@orinocoenergygroup.com si tienes preguntas. Una nueva versión del consentimiento de videos o su vencimiento requerirá otra decisión antes de cargarlos. La Política de privacidad explica la gestión de consultas y las solicitudes sobre datos. Los enlaces siguientes ofrecen información técnica de los proveedores."
+          ]
+        ]
+      }
+    }
+  }
+}
